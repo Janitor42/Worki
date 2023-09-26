@@ -49,4 +49,4 @@ for i in range(a):
     print('+___ ')
     print('|'+str(b)+' /')
     print('|__\ ' )
-    print('|  ')
+    print('|1  ')
