@@ -53,7 +53,7 @@ def Game_over():
         sprite.add_text("You score is ", 250, 200, font_size=60)
         sprite.add_text(str(score_text), 280, 300, font_size=60)
 
-@wrap.always(300)
+@wrap.always(200)
 def move():
         global list_body,list_boby2,score_text,score,speed_snake
 
