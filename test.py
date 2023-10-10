@@ -1,52 +1,77 @@
-# Имеется
-# N
-#  кг металлического сплава. Из него изготавливают заготовки массой K
-#  кг каждая. После этого из каждой заготовки вытачиваются детали массой M
-#  кг каждая (из каждой заготовки вытачивают максимально возможное количество деталей).
-# Если от заготовок после этого что-то остается, то этот материал возвращают к началу производственного цикла и сплавляют с тем,
-# что осталось при изготовлении заготовок. Если того сплава, который получился, достаточно для изготовления хотя бы одной заготовки,
-# то из него снова изготавливают заготовки, из них—  детали и т.д.
-#
-# Напишите программу, которая вычислит, какое количество деталей может быть получено по этой технологии из имеющихся исходно N
-#  кг сплава.
-#
-# Входные данные
-# Программа получает на вход три натуральных числа
-# N
-# , K
-# , M
-# .
-#
-# Выходные данные
-# Выведите одно число — количество деталей, которое может получиться по такой технологии.
+import wrap
+import random
+from wrap import world,sprite
+wrap.world.create_world(1300,700)
+wrap.world.set_back_color(239,88,158)
+bird=sprite.add("mario-enemies",250,350,"fish_red")
+sprite.set_reverse_x(bird,True)
 
-# n=10
-# k=5
-# m=2
 
-# k1=n//k# сколько получится изготовить деталей из сплава в 1 раз
-# k_ost=n%k # остаток заготовок к которому можно прибавить
-#
-# m1=(k//m)*k1 #Сколько деталей выточили из готовых заготовок 1 ход
-# m_ost=(k%m)*k1 #Остаток всех материалов после вытачивания
-# q_ost=m_ost+k_ost #Вторичное сырье
-#
-# m2=q_ost//k
-#
-# s1=q_ost%k
-#
-# m3=s1//m
-#
-# all=m1+m2+m3
-#
-# print(all)
 
-a=int(input())
-b=0
-for i in range(a):
-    b+=1
-    print()
-    print('+___ ')
-    print('|'+str(b)+' /')
-    print('|__\ ' )
-    print('|1 323   ')
+#cubes enemies
+cubes1=[]
+cubes2=[]
+def instruction(pos_x,cubes):
+    number_cube = 1
+    y = 0
+    #cubes platform 1
+    for i in range(27):
+        cubes.append(sprite.add("battle_city_items",pos_x,y,"block_brick"))
+        y=y+30
+
+    print(cubes)
+    #gap in the cubes
+    random_cube=random.randint(4,20)
+    # for i in range(5):
+    sprite.hide(cubes[random_cube])
+        # number_cube=number_cube+1
+#asking for the functions to happen
+instruction(700,cubes1)
+instruction(1200,cubes2)
+
+angle=-90
+switch=False
+ground=[]
+x=20
+for i in range(7):
+    ground.append(sprite.add("mario-items",x,670,"moving_platform3"))
+    x+=95
+number=0
+@wrap.always()
+def moving_platforms():
+    global number,ground,angle
+    # sprite.move(ground[number],-5,0)
+    # number=number+1
+    # if number>=7:
+    #     number=0
+    for i in ground:
+        sprite.move(i,-5,0)
+        if sprite.get_x(i) <= -95:
+            sprite.move_to(i,570,670)
+
+    if switch==True:
+        fall()
+        sprite.set_angle(bird,angle)
+        if angle == 0:
+            angle = 0
+        else:
+            angle=angle+10
+
+#bird jumps
+@wrap.on_key_down(wrap.K_UP)
+def jump():
+    global angle
+    sprite.move(bird,0,-40)
+    angle=-90
+
+#bird falling
+@wrap.on_key_down(wrap.K_SPACE)
+def fall():
+    global switch
+    sprite.move(bird,0,7)
+    switch=True
+
+
+import wrap_py
+
+wrap_py.app.start()

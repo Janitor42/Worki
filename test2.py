@@ -21,10 +21,10 @@ def instruction(pos_x,cubes):
 
     print(cubes)
     #gap in the cubes
-    random_cube=random.choice(cubes)
+    random_cube=random.randint(3,20)
     print(random_cube)
     # for i in range(5):
-    sprite.hide(cubes[int(random_cube)])
+    sprite.hide(cubes[(random_cube)])
         # number_cube=number_cube+1
 #asking for the functions to happen
 instruction(700,cubes1)
@@ -71,3 +71,8 @@ def fall():
     global switch
     sprite.move(bird,0,7)
     switch=True
+
+
+import wrap_py
+
+wrap_py.app.start()
