@@ -10,7 +10,7 @@ danger = False
 class Figure:
     def __init__(self):
         self.names = []
-        self.this_figure = 1
+        self.this_figure =1
         self.calk_pos = []
         self.check = False
         self.turn = 0
@@ -21,7 +21,7 @@ class Figure:
         self.calk_pos.clear()
         self.check = False
         self.turn = False
-        self.this_figure = random.randint(1, 1)  # random value in one for 6
+        self.this_figure = random.randint(1, 2)  # random value in one for 6
 
     def _create_figure(self):
         self._clear_all()
@@ -32,6 +32,19 @@ class Figure:
                 self.names.append(sprite.add('pacman', x, y, 'dot'))
                 sprite.set_size(self.names[-1], 28, 28)
                 x += 30
+        if self.this_figure == 2:
+            x = 110
+            y = 0
+            self.names.append(sprite.add('pacman', x, y, 'dot'))
+            sprite.set_size(self.names[-1], 28, 28)
+            x += 30
+        # if self.this_figure==3:
+        #     x = 110
+        #     y = 0
+        #     for i in range(4):
+        #         self.names.append(sprite.add('pacman', x, y, 'dot'))
+        #         sprite.set_size(self.names[-1], 28, 28)
+        #         x += 30
 
     def move_figure(self, they):
         self.check = self._touch_line() or self._touch_blocks(they)
@@ -62,10 +75,11 @@ class Figure:
         self.check = not self.check
 
     def left(self, field):
-        moving(self.calk_pos, self.names, 20, -30, 'right', field)
+        moving(self.calk_pos, self.names, 20, -30, 'right', field,self.this_figure)
 
     def right(self, field):
-        moving(self.calk_pos, self.names, 280, 30, "left", field)
+
+        moving(self.calk_pos, self.names, 280, 30, "left", field,self.this_figure)
 
     def down(self):
         for i in self.names:
@@ -122,18 +136,18 @@ class Figure:
                 y += add_y
 
 
-def moving(calk_pos, names, count, move, left, field):
+def moving(calk_pos, names, count, move, left, field,type_figure):
     global danger
     calk_pos.clear()
-    moving = True
+    log_moving = True
     for i in names:
         x = sprite.get_x(i)
         calk_pos.append(x)
     for i in calk_pos:
         if i >= count and left == "left":
-            moving = False
+            log_moving = False
         if i <= count and left == "right":
-            moving = False
+            log_moving = False
     calk_pos.clear()
     for i in names:
         old_x = sprite.get_x(i)
@@ -141,7 +155,7 @@ def moving(calk_pos, names, count, move, left, field):
         calk_pos.append(old_x)
         calk_pos.append(old_y)
     for i in names:
-        if moving:
+        if log_moving:
             sprite.move(i, move, 0)
             for q in field:
                 if sprite.is_collide_sprite(q['name'], i):

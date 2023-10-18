@@ -3,7 +3,7 @@ from wrap import sprite
 import random
 
 
-wrap.world.create_world(1500, 500)
+wrap.world.create_world(500, 500)
 wrap.world.set_back_color(137, 193, 204)
 
 # Препядствие игрока
