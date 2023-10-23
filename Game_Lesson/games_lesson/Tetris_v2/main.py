@@ -33,7 +33,7 @@ def down():
     this.down()
 
 
-@wrap.always(25)
+@wrap.always(40)
 def game():
     this.move_figure(they.work_fields)
     they.add_field(this)
@@ -42,5 +42,4 @@ def game():
 
 
 import wrap_py
-
 wrap_py.app.start()

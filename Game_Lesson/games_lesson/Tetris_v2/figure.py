@@ -10,7 +10,7 @@ danger = False
 class Figure:
     def __init__(self):
         self.names = []
-        self.this_figure =1
+        self.this_figure = 1
         self.calk_pos = []
         self.check = False
         self.turn = 0
@@ -25,6 +25,7 @@ class Figure:
 
     def _create_figure(self):
         self._clear_all()
+        # figure line
         if self.this_figure == 1:
             x = 110
             y = 0
@@ -32,19 +33,14 @@ class Figure:
                 self.names.append(sprite.add('pacman', x, y, 'dot'))
                 sprite.set_size(self.names[-1], 28, 28)
                 x += 30
+        # figure_dot
         if self.this_figure == 2:
             x = 110
             y = 0
             self.names.append(sprite.add('pacman', x, y, 'dot'))
             sprite.set_size(self.names[-1], 28, 28)
             x += 30
-        # if self.this_figure==3:
-        #     x = 110
-        #     y = 0
-        #     for i in range(4):
-        #         self.names.append(sprite.add('pacman', x, y, 'dot'))
-        #         sprite.set_size(self.names[-1], 28, 28)
-        #         x += 30
+
 
     def move_figure(self, they):
         self.check = self._touch_line() or self._touch_blocks(they)
@@ -75,11 +71,12 @@ class Figure:
         self.check = not self.check
 
     def left(self, field):
-        moving(self.calk_pos, self.names, 20, -30, 'right', field,self.this_figure)
+
+        moving(self.calk_pos, self.names, 20, -30, 'right', field)
 
     def right(self, field):
 
-        moving(self.calk_pos, self.names, 280, 30, "left", field,self.this_figure)
+        moving(self.calk_pos, self.names, 280, 30, "left", field)
 
     def down(self):
         for i in self.names:
@@ -91,6 +88,8 @@ class Figure:
         if self._check_in_collide_all(menu.line_left, menu.line_right, work_fields):
             sprite.set_angle(self.names[0], old_angle)
             self._return_old_pos()
+
+# """переписать поворот для всех функций"""!
 
     def _choice_direction(self, one):
         if sprite.get_angle(self.names[0]) == 90:
@@ -136,7 +135,7 @@ class Figure:
                 y += add_y
 
 
-def moving(calk_pos, names, count, move, left, field,type_figure):
+def moving(calk_pos, names, count, move, left, field):
     global danger
     calk_pos.clear()
     log_moving = True

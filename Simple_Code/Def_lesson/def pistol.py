@@ -34,6 +34,7 @@ def reloading(q):
         print('dont reloading, wrong')
 
 
+
 while True:
-    shoot(input())
-    reloading(input())
+    shoot(input('стрелять на 1 '))
+    reloading(input('перезарядка на 2 '))
