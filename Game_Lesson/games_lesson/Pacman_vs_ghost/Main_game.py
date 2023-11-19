@@ -7,7 +7,7 @@ import Shoot_towers
 import Towers
 import Enemies
 
-wrap.world.create_world(1500, 900)
+wrap.world.create_world(900, 900)
 wrap.world.set_back_color(105, 110, 110)
 
 

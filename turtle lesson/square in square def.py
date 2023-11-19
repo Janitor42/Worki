@@ -1,21 +1,26 @@
+import time
 import turtle
-def create_square(a):
-    turtle.forward(a)
+def create_square(size):
+    turtle.forward(size)
     turtle.left(90)
-    turtle.forward(a)
+    turtle.forward(size)
     turtle.left(90)
-    turtle.forward(a)
+    turtle.forward(size)
     turtle.left(90)
-    turtle.forward(a)
+    turtle.forward(size)
     turtle.left(90)
-
-
-
-def one_figure(a,color):
+def one_figure(size,color):
     turtle.color('black',color)
     turtle.begin_fill()
-    create_square(a)
+    create_square(size)
     turtle.end_fill()
+
+
+
+
+
+
+
 
 
 

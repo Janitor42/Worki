@@ -12,13 +12,30 @@ def create_circle(color,size,long):
     turtle.circle(size,long)
     turtle.right(180)
 
-
 def create_lines():
     turtle.right(90)
     turtle.forward(100)
     turtle.left(90)
     turtle.forward(100)
     turtle.right(90)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 create_circle('brown',60,180)
 create_circle('grey',40,180)

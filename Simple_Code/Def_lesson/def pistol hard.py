@@ -56,6 +56,11 @@ def check_shoot(shoot):
         value_reload-=1
         prepar=False
 
+
+
+
+
+
 def work():
     reloading()
     preparing()

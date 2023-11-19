@@ -4,17 +4,17 @@ height=int(input("введите высоту треугольника"))
 
 # #1
 a=0
-for i in range(1,height+1,1):
-   a+=1
-   print("#"*a)
+# for i in range(1,height+1,1):
+#    a+=1
+#    print("#"*a)
 
 # print()
 #
 # #2
-# for i in range(1,height+1,1):
-#    print("#"*a)
-#    a -= 1
-#
+for i in range(1,height+1,1):
+   print("#"*a)
+   a -= 1
+
 # print()
 
 #3

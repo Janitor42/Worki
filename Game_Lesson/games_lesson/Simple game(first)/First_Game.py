@@ -32,7 +32,6 @@ def go_right():
 def move_target():
         global speed,score_text,score,speed_platform
         global lives,lives_text
-
         sprite.move(target,0,speed)#???
         if sprite.is_collide_sprite(platform,target):
                 sprite.move_to(target,random.randint(20,480),20)

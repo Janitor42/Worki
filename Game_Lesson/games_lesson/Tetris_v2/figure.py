@@ -126,13 +126,16 @@ class Figure:
             n += 2
 
     def _returns(self, one, x, y, add_x, add_y):
-        for i in self.names:
-            if one == i:
-                continue
-            else:
-                sprite.move_to(i, sprite.get_x(one) + x, sprite.get_y(one) + y)
-                x += add_x
-                y += add_y
+        if self.this_figure==1 or self.this_figure==2:
+            for i in self.names:
+                if one == i:
+                    continue
+                else:
+                    sprite.move_to(i, sprite.get_x(one) + x, sprite.get_y(one) + y)
+                    x += add_x
+                    y += add_y
+
+
 
 
 def moving(calk_pos, names, count, move, left, field):
