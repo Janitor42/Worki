@@ -12,12 +12,6 @@ def create_circle(color,size,long):
     turtle.circle(size,long)
     turtle.right(180)
 
-def create_lines():
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.left(90)
-    turtle.forward(100)
-    turtle.right(90)
 
 
 
@@ -37,8 +31,14 @@ def create_lines():
 
 
 
-create_circle('brown',60,180)
-create_circle('grey',40,180)
-create_circle('pink',25,180)
+turtle.circle(60,540)
+
+turtle.circle(-40,540)
+
+turtle.circle(20,540)
+
+# create_circle('brown',60,180)
+# create_circle('grey',40,180)
+# create_circle('pink',25,180)
 
 turtle.mainloop()

@@ -8,6 +8,7 @@ def create_line(how_many_lines):
         turtle.forward(-100)
 
 
+
 def create_small_effects(how_many_lines):
 
     line = 360 / how_many_lines
@@ -31,7 +32,11 @@ def create_small_effects(how_many_lines):
 
 
 
-create_line(6)
-create_small_effects(6)
+
+create_small_effects(5)
+
+
+
+
 
 turtle.mainloop()
