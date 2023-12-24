@@ -51,37 +51,12 @@ def build(width,height,long_row,height_row):
         row_1(long_row, width, height)
 
 
-
-turtle.speed(100)
-
+turtle.speed(20)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-build(45,25,10,15)
+build(65,25,5,3)
 
 
 turtle.mainloop()

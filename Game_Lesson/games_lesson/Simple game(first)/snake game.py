@@ -65,6 +65,8 @@ def move():
         snake_head) > 500:
         Game_over()
         speed_snake = 0
+
+
     if sprite.is_collide_any_sprite(snake_head, list_body) == list_body[0]:
         sprite.remove(list_body[0])
         list_body.insert(0, sprite.add("pacman", random.randint(20, 480), random.randint(20, 480), "dot"))
@@ -74,6 +76,7 @@ def move():
         score = sprite.add_text(str(score_text), 90, 50)
         list_boby2.append(sprite.add("pacman", 0, 0, "dot"))
 
+
     if score_text > 0:
         for i in range(len(list_boby2)):
             sprite.set_height_proportionally(list_boby2[i], 15)
@@ -82,6 +85,11 @@ def move():
             sprite.move_to(list_boby2[i], x_head, y_head)
             x_head = x_head_old
             y_head = y_head_old
+
+
+
+
+
             if sprite.is_collide_any_sprite(snake_head, list_boby2) is not None:
                 Game_over()
                 speed_snake = 0
