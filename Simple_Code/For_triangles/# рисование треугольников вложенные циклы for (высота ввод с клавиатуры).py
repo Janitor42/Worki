@@ -8,7 +8,7 @@ height2=0
 height3=0
 height2=height
 height3=height
-#1
+#1 begin
 for i in range(1,2,1):
    for k in range(1,height+1,1):
        print("#"*k)
@@ -16,7 +16,7 @@ for i in range(1,2,1):
 
 print()
 
-#2
+#2 button
 for i in range(1,2,1):
    for k in range(1,height+1,1):
        print("#"*height)
@@ -26,7 +26,7 @@ for i in range(1,2,1):
 print()
 
 
-#3
+#3 method grid
 for i in range(1,2,1):
    for k in range(1,height2+1,1):
        print(" "*height2,"#"*k)

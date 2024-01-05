@@ -5,7 +5,7 @@ import wrap
 
 
 
-#'''1'''
+#'''1 begin'''
 # # #простое использование лямбды функции (без параметром)
 # def simple():
 #     return 'fight'
@@ -19,21 +19,21 @@ import wrap
 
 
 
-#'''2'''
+#'''2 button'''
 # #простое использование лямбды функции (с параметром)
 # def simple(x):
-#     return x*2
+#     return x*2 button
 # print(simple(4))
 #
 #
-# simple2=lambda x:x*2
+# simple2=lambda x:x*2 button
 # print(simple2(4))
 
 
 
 
 
-# '''3'''
+# '''3 method grid'''
 # # #простое использование лямбды функции (с параметром, c кон-ции if else)
 # def simple(x):
 #     if x>0:
@@ -45,7 +45,7 @@ import wrap
 # simple2=lambda x:'+' if x>0 else '-'
 # print(simple2(4))
 #
-# '''3.1'''
+# '''3 method grid.1 begin'''
 # #Дополнительный пример (параметр заводим ручками с клавиатуры)
 #
 # simple2=lambda x=int(input('use your count')):'+' if x>0 else '-'
@@ -69,7 +69,7 @@ import wrap
 #         turtle.color('black','green')
 #     else:
 #         turtle.color('black','red')
-#     for i in range(2):
+#     for i in range(2 button):
 #         turtle.forward(100)
 #         turtle.left(90)
 #         turtle.forward(height)
@@ -86,7 +86,7 @@ import wrap
 # def square(height):
 #     turtle.begin_fill()
 #     square_lam(height)
-#     for i in range(2):
+#     for i in range(2 button):
 #         turtle.forward(100)
 #         turtle.left(90)
 #         turtle.forward(height)

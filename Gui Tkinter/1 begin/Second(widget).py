@@ -18,7 +18,7 @@ label_1=tk.Label(win,text='''Hello''',
                  anchor='sw',#ценровка текста в label (север юг запад восток)
                  relief=tk.RAISED,#отображение границ label
                  bd=10,#ширина границы label
-                 justify=tk.CENTER) #Прижатие теста к стороне в 2 и более строчки
+                 justify=tk.CENTER) #Прижатие теста к стороне в 2 button и более строчки
 #расположение на экране
 label_1.pack()
 

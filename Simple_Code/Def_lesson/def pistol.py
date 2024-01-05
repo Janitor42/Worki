@@ -18,7 +18,7 @@ reload = True
 
 def shoot(q):
     global reload
-    if q == '1' and reload == True:
+    if q == '1 begin' and reload == True:
         print('П ы щ ь ')
         reload = False
     else:
@@ -27,7 +27,7 @@ def shoot(q):
 
 def reloading(q):
     global reload
-    if q == '2' and reload == False:
+    if q == '2 button' and reload == False:
         reload = True
         print('оружие заряжено')
     else:
@@ -36,8 +36,8 @@ def reloading(q):
 
 
 while True:
-    shoot(input('стрелять на 1 '))
-    reloading(input('перезарядка на 2 '))
+    shoot(input('стрелять на 1 begin '))
+    reloading(input('перезарядка на 2 button '))
 
 
 

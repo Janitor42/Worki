@@ -34,7 +34,7 @@ for i in range(7):
 speed_imitation=-10
 
 # Игрок
-player = sprite.add("mario-1-big", 250, 250, "duck")
+player = sprite.add("mario-1 begin-big", 250, 250, "duck")
 player_on_game = False
 pos_x_player = 1
 angle_mario = -3

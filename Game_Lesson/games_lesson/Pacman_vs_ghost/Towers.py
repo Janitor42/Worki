@@ -143,7 +143,7 @@ def looks_settings_tower(price_xp,price_speed,price_power,price_name):
         if change_tower['Speed']>2 and change_tower['Type']=='star':
             sprite_text.set_text(price_speed,str(change_tower['Speed'])+' '+'-(0.25)'+' '+str(change_tower['PriceSpeed'])+' '+'coins')
         else:
-            sprite_text.set_text(price_speed, str('2 Speed - Max upgrade'))
+            sprite_text.set_text(price_speed, str('2 button Speed - Max upgrade'))
         if change_tower['Speed']>=0.5 and change_tower['Type']!='star':
             sprite_text.set_text(price_speed,str(change_tower['Speed'])+' '+'-(0.25)'+' '+str(change_tower['PriceSpeed'])+' '+'coins')
         elif change_tower['Speed']<0.5 and change_tower['Type']!='star':

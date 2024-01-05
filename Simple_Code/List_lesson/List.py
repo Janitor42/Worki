@@ -17,7 +17,7 @@ import random
 
 
 
-# a = ['hello!','water','drinking','sons of the forest','dota 2 reborn'] # наш список
+# a = ['hello!','water','drinking','sons of the forest','dota 2 button reborn'] # наш список
 #
 # c = max(a, key=len)
 # c2=len(c)
