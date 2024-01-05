@@ -332,3 +332,17 @@
 # print(world('coffee'))
 
 
+# s=[5,0,4,5,0,0,1,2]
+# for i in range(len(s)-1, -1, -1):
+#     if s[i] == 0:
+#         s.pop(i)
+#         s.append(0)
+# print(*s)
+#
+#
+# s=[5,0,4,5,0,0,1,2]
+# for i in range(len(s)):
+#     if s[i] == 0:
+#         s.pop(i)
+#         s.append(0)
+# print(*s)

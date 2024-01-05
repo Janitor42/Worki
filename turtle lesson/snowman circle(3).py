@@ -16,21 +16,6 @@ def create_circle(color,size,long):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 turtle.circle(60,540)
 
 turtle.circle(-40,540)

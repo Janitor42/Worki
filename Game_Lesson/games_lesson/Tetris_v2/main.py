@@ -1,10 +1,9 @@
-import random
-import time
 import wrap
-from wrap import sprite, sprite_text, world
-import menu
-import figure
+from wrap import world
+
 import field
+import figure
+import menu
 
 world.create_world(800, 612)
 menu.create_border()
