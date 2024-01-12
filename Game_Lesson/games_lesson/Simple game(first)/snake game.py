@@ -60,6 +60,8 @@ def move():
 
     x_head = sprite.get_x(snake_head)
     y_head = sprite.get_y(snake_head)
+
+
     sprite.move_at_angle_dir(snake_head, speed_snake)
     if sprite.get_x(snake_head) < 0 or sprite.get_y(snake_head) < 0 or sprite.get_x(snake_head) > 500 or sprite.get_y(
         snake_head) > 500:
@@ -76,7 +78,7 @@ def move():
         score = sprite.add_text(str(score_text), 90, 50)
         list_boby2.append(sprite.add("pacman", 0, 0, "dot"))
 
-
+    #move_head_and_body
     if score_text > 0:
         for i in range(len(list_boby2)):
             sprite.set_height_proportionally(list_boby2[i], 15)

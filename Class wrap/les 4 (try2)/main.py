@@ -31,22 +31,35 @@ all_balls = []
 all_stars = []
 
 
+
+
+
 def rd_not_zero(min, max):
     return random.choice([i for i in range(min, max + 1) if i != 0])
 
 
 def create_one_star():
     all_stars.append(star.Star(x=rd(50, 450), y=rd(50, 450), size=rd(20, 80),
-                               number=rd(-20, 20),list_star=all_stars))
+                               number=rd(10, 20),list_star=all_stars))
 
 
 
 @wrap.on_key_down()
 def create_ball_on_key():
     all_balls.append(ball.Ball(x=250, y=250, speed_x=rd_not_zero(-3, 3),
-                               speed_y=rd_not_zero(-3, 3), size=rd(20, 80),list_ball=all_balls))
+                               speed_y=rd_not_zero(-3, 3), size=rd(20, 80)))
 
 
+def remove_star(i):
+    all_stars.remove(i)
+
+def remove_ball(i):
+    all_balls.remove(i)
+
+def add_tree_ball(i):
+    for q in range(3):
+        all_balls.append(ball.Ball(x=sp.get_x(i.name), y=sp.get_y(i.name), speed_x=rd_not_zero(-3, 3),
+                               speed_y=rd_not_zero(-3, 3), size=sp.get_height(i.name)//3))
 @wrap.always(15)
 def act():
     global begin
@@ -54,15 +67,15 @@ def act():
     for i in all_balls:
         i.move()
         i.collide(all_stars)
-
+        i.check_ball(remove_ball,add_tree_ball)
 
     if float(begin) + times_between <= float(time.time()):
         create_one_star()
         begin = time.time()
 
-
     for i in all_stars:
-        i.light_and_remove_star(i)
+        i.light_star(i)
+        i.check_star(remove_star)
 
 
 

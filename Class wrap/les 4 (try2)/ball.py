@@ -12,12 +12,12 @@ def rd_not_zero(min, max):
 class Ball:
     number = 1
 
-    def __init__(self, x, y, speed_x, speed_y, size, list_ball):
+    def __init__(self, x, y, speed_x, speed_y, size):
         self.__x = x
         self.__y = y
         self.__speed_x = speed_x
         self.__speed_y = speed_y
-        self.__list_ball = list_ball
+
         self.__size = size
         self.choice_costume()
         sp.set_width_proportionally(self.name, self.__size)
@@ -50,30 +50,18 @@ class Ball:
                 self._change_size(star.number)
                 self._maybe_change_costume()
                 star.live = False
-        self._del_small_ball()
-        self._del_big_ball()
 
     def _change_size(self, number):
         self.__size += number
         sp.set_width_proportionally(self.name, self.__size)
         wrap.sprite_text.set_text(self.name_size, str(self.__size))
 
-    def _del_small_ball(self):
-        if self.__size <= 4:
-            self.__list_ball.remove(self)
-
-    def _del_big_ball(self):
-        if self.__size >= 100:
-            self._create_three_ball()
-            self.__list_ball.remove(self)
-
-
-    def _create_three_ball(self):
-        for q in range(3):
-            self.__list_ball.append(Ball(x=sp.get_x(self.name), y=sp.get_y(self.name),
-                                         speed_x=rd_not_zero(-3, 3),
-                                       speed_y=rd_not_zero(-3, 3),
-                                         size=self.__size//3, list_ball=self.__list_ball))
+    def check_ball(self,remove_ball,add_three_ball):
+        if self.__size<=4:
+            remove_ball(self)
+        if self.__size>=100:
+            add_three_ball(self)
+            remove_ball(self)
 
 
     def _maybe_change_costume(self):

@@ -1,16 +1,10 @@
-import wrap
-import random
-from wrap import sprite as sp
-from random import randint as rd
-
-
 #свойства
 class Dog:
 
     __colors=['black','white','red']#на уровне класса список цветов
     def __init__(self,name,color=None,breed=None):
-        self.__name=name
-        self.__color=color
+        self.name=name
+        self.color=color
         self.__breed=breed
 
     def get_name(self):
@@ -36,5 +30,10 @@ d1.name='Shi'
 print(d1.name)
 
 print(d1.breed)
+
+
+
+
+
 
 
