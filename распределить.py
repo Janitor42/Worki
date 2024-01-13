@@ -351,3 +351,28 @@
 #         s.pop(i)
 #         s.append(0)
 # print(*s)
+
+
+
+
+# Напишите функцию, которая переставляет все прописные буквы в начало слова — строки.
+#
+# Примеры
+# cap_to_front("hApPy") ➞ "APhpy"
+#
+# cap_to_front("moveMENT") ➞ "MENTmove"
+#
+# cap_to_front("shOrtCAKE") ➞ "OCAKEshrt"
+
+# s='asfasAAfdsdfFFFss'
+# s2=s
+# new=str()
+# count=-1
+# l=[]
+# for i in s:
+#     if i.isupper():
+#         new=new+(s2[count+1])
+#         s=(s.replace(i,''))
+#     count+=1
+# s=new+s
+# print(s)

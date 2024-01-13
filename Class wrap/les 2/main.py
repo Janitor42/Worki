@@ -1,6 +1,6 @@
 import random
 import wrap
-import ball
+import ball_two
 from wrap import sprite as sp
 from random import randint as rd
 
@@ -14,7 +14,7 @@ all_balls = []
 
 @wrap.on_key_down(wrap.K_RIGHT)
 def create_customized_ball():
-    all_balls.append(ball.Ball(speed_x=rd(-5,5),speed_y=rd(5,5),x=rd(10,470),y=rd(10,470)))
+    all_balls.append(ball_two.Ball(speed_x=rd(-5,5),speed_y=rd(5,5),x=rd(10,470),y=rd(10,470)))
 
 
 @wrap.on_mouse_down(wrap.BUTTON_LEFT)

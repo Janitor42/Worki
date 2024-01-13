@@ -1,6 +1,6 @@
 import random
 import wrap
-import ball
+import ball_three
 from wrap import sprite as sp
 from random import randint as rd
 
@@ -16,14 +16,14 @@ pause = False
 
 @wrap.on_key_down(wrap.K_LEFT)
 def create_simple_ball():
-    all_balls.append(ball.Ball('easy'))
+    all_balls.append(ball_three.Ball('easy'))
 
 
 @wrap.on_key_down(wrap.K_RIGHT)
 def create_customized_ball():
     global pause
     pause = True
-    all_balls.append(ball.Ball('hard'))
+    all_balls.append(ball_three.Ball('hard'))
 
 
 @wrap.on_key_down(wrap.K_SPACE)

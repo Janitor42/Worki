@@ -1,6 +1,6 @@
 import random
 import wrap
-import ball
+import ball_one
 from wrap import sprite as sp
 from random import randint as rd
 
