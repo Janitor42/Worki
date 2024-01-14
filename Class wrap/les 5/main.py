@@ -7,13 +7,9 @@ import time
 from wrap import sprite as sp
 from random import randint as rd
 
-# на экране должен быть квадрат шарики болтаются внутри квадрата+
-# квадрат это класс+
-# Можем сделать много таких квадратов, указываем коо-ты создания+
-# указываем сколько шариков должно быть внутри него(при создании класса создаем кучу шариков в его границах)+
 
-win_x = 500
-win_y = 500
+win_x = 800
+win_y = 800
 
 wrap.world.create_world(win_x, win_y)
 wrap.world.set_back_color(255, 255, 255)
@@ -25,14 +21,18 @@ def rd_not_zero(min, max):
 
 @wrap.on_key_down()
 def create_square():
-    all_square.append(square_five.Square(size=rd(150, 250),
-                                         x=rd(50, 450), y=rd(50, 450),
-                                         count_ball=rd(2, 5)))
+    all_square.append(square_five.Square(size=200,
+                                         x=rd(50, win_x-50),
+                                         y=rd(50, win_y-50),
+                                         count_ball=rd(2, 5),
+                                         list_square=all_square))
+
 
 @wrap.always(15)
 def act():
     for i in all_square:
         i.move_all()
+
 
 
 import wrap_py

@@ -17,9 +17,15 @@ def create_square():
 
 
 
+
+
+
+
+
+
 one_square('green')
 one_square('orange')
-one_square('red')
+one_square('blue')
 one_square('pink')
 
 

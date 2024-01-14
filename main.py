@@ -1,14 +1,7 @@
-s='asfasAAfdsdfFFFss'
-s2=s
-new=str()
-count=-1
-l=[]
-for i in s:
-    if i.isupper():
-        new=new+(s2[count+1])
-        s=(s.replace(i,''))
-    count+=1
-s=new+s
-print(s)
+a=[200,200]
 
+b=[100,300]
 
+for i in range(b[0],b[1]+1):
+    if a[0] ==i:
+        print(2312)
