@@ -1,7 +1,6 @@
-a=[200,200]
+import random
+def rd_randrange():
+    return random.randrange(10, 110, 20)
 
-b=[100,300]
-
-for i in range(b[0],b[1]+1):
-    if a[0] ==i:
-        print(2312)
+while True:
+    print(rd_randrange())

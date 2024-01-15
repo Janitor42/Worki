@@ -56,7 +56,8 @@ turtle.speed(20)
 
 
 
-build(65,25,5,3)
+
+build(65,25,2,5)
 
 
 turtle.mainloop()

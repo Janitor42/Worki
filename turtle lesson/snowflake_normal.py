@@ -33,7 +33,18 @@ def create_small_effects(how_many_lines):
 
 
 
-create_small_effects(5)
+
+
+
+
+
+
+
+
+
+
+
+create_small_effects(9)
 
 
 

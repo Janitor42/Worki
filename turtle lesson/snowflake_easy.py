@@ -1,6 +1,5 @@
 import turtle
 
-import turtle
 
 def create_line(how_many_lines):
     for i in range(how_many_lines):
@@ -12,10 +11,6 @@ def create_line(how_many_lines):
 
 
 
-
-
-
-
-create_line(2)
+create_line(7)
 
 turtle.mainloop()
