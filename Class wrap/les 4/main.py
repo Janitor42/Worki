@@ -37,7 +37,7 @@ def rd_not_zero(min, max):
 
 def create_one_star():
     all_stars.append(star_four.Star(x=rd(50, 450), y=rd(50, 450), size=rd(20, 80),
-                                    number=rd(-20, 20), list_star=all_stars))
+                                    number=rd(-20, 1), list_star=all_stars))
 
 
 @wrap.on_key_down()

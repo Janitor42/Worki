@@ -89,9 +89,6 @@ def move():
             y_head = y_head_old
 
 
-
-
-
             if sprite.is_collide_any_sprite(snake_head, list_boby2) is not None:
                 Game_over()
                 speed_snake = 0

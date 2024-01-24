@@ -17,12 +17,16 @@ wrap.add_sprite_dir("C:/Users/i'm/PycharmProjects/Worki/Class wrap/les 5")
 
 class Square:
     place = 1
+    save_size = 20
+
     def __init__(self, size, x, y, list_square, list_balls,list_stars,time_between):
 
 
 
-        if Square.place<5:
-            self._define_place()
+        if self._find_place():
+            self.min_save = Square.save_size
+            self.max_save = self.min_save + 25
+            Square.save_size += 25
         else:
             self.x = x
             self.y = y
@@ -39,35 +43,37 @@ class Square:
 
         self.name = sp.add('picture', self.x, self.y, costume='square_five')
         self.name_text = sp.add_text(
-            'Для шаров ' + str(self.group)+' '+str(self.min_save)+' '+str(self.max_save),
+            'Для шаров ' + str(self.group)+' '+str(self.min_save-20)+' '+str(self.max_save-20),
             self.x, self.y - self.size * 0.6)
 
         sp.set_width_proportionally(self.name, self.size)
         Square.place += 1
 
 
+    
 
+    def _find_place(self):
+        if Square.place < 5:
+            x = 200
+            y = 200
 
-    def _define_place(self):
-        if Square.place==1:
-            self.x,self.y,self.group=200,200,'A'
-            self.min_save=0
-            self.max_save=24
-        if Square.place==2:
-            self.x,self.y,self.group=200,600,'B'
-            self.min_save=25
-            self.max_save=50
-        if Square.place==3:
-            self.x,self.y,self.group=600,200,'C'
-            self.min_save=51
-            self.max_save=75
-        if Square.place==4:
-            self.x,self.y,self.group=600,600,'D'
-            self.min_save=74
-            self.max_save=101
-
-
-
+            group = 'A'
+            for i in range(1, 5):
+                if Square.place == i:
+                    if i == 2:
+                        x = 500
+                        group = 'B'
+                    elif i == 3:
+                        y = 500
+                        group = 'C'
+                    elif i == 4:
+                        x, y = 450, 450
+                        group = 'D'
+                    self.x, self.y = x, y
+                    self.group = group
+                    return True
+        else:
+            return False
 
 
     def define_self_balls(self):

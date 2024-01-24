@@ -1,6 +1,15 @@
-import random
-def rd_randrange():
-    return random.randrange(10, 110, 20)
-
-while True:
-    print(rd_randrange())
+# Дана строка, в которой буква h встречается как минимум два раза.
+# Разверните последовательность символов, заключенную между первым и последнием появлением буквы h,
+# в противоположном порядке.
+#
+# Входные данные
+# Вводится строка.
+#
+# Выходные данные
+# Выведите ответ на задачу.
+#
+# Примеры
+# входные данные
+# In the hole in the ground there lived a hobbit
+# выходные данные
+# In th a devil ereht dnuorg eht ni eloh ehobbit
