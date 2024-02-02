@@ -89,7 +89,7 @@ def move():
 #Перемещение списка врагов по экрану
     for i in range(len(enemy_list)):
         sprite.move(enemy_list[i], direction, height)
-        #Работа с костумами (движение)
+        #Работа с костюмами (движение)
         if sprite.get_costume(enemy_list[i]) == "enemy_blue_down1" or sprite.get_costume(
             enemy_list[i]) == "enemy_yellow_down1" \
             or sprite.get_costume(enemy_list[i]) == "enemy_pink_down1" or sprite.get_costume(

@@ -16,9 +16,14 @@ def create_calendar():
             if count > 31:
                 pass
             else:
+                if j==0:
+                    my_bn = tk.Button(win, text=count)
+                    buttons.append(my_bn)
+                    my_bn.grid(row=i, column=j, stick='we',ipadx=12,padx=[30,0])
+                    continue
                 if j >= 5:
                     my_bn = tk.Button(win, text=count,
-                                      background='green')
+                                      background='green',)
                     buttons.append(my_bn)
                     my_bn.grid(row=i, column=j, stick='we')
                 else:

@@ -40,8 +40,8 @@ bt2.pack()
 
 bt_count=tk.Button(win,text=f'Счетчик: {count_use}',
                    command=count,
-                   activebackground='red',#цвет кнопки в момент ее нажатия
-                   state=tk.DISABLED)#делает кнопку неактивной
+                   activebackground='red')#цвет кнопки в момент ее нажатия
+                   # state=tk.DISABLED)#делает кнопку неактивной
 bt_count.pack()
 
 
