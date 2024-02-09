@@ -21,3 +21,7 @@ win.resizable(True,True)
 
 #отображение окна
 win.mainloop()
+
+
+# win.deiconify()#показывает окно
+# win.withdraw()  # прячет окно
