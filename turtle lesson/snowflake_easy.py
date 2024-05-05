@@ -1,6 +1,6 @@
 import turtle
 
-
+turtle.speed(1)
 def create_line(how_many_lines):
     for i in range(how_many_lines):
         line=360/how_many_lines
@@ -11,6 +11,6 @@ def create_line(how_many_lines):
 
 
 
-create_line(7)
+create_line(15)
 
 turtle.mainloop()

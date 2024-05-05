@@ -16,14 +16,27 @@ def create_circle(color,size,long):
 
 
 
-turtle.circle(60,540)
 
-turtle.circle(-40,540)
 
-turtle.circle(20,540)
 
-# create_circle('brown',60,180)
-# create_circle('grey',40,180)
-# create_circle('pink',25,180)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create_circle('brown',60,180)
+create_circle('grey',40,180)
+create_circle('pink',25,180)
+
 
 turtle.mainloop()

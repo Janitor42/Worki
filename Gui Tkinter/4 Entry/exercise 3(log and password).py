@@ -10,7 +10,7 @@ def get_text():
     if len(name.get()) + len(password.get())>0:
         if name.get()==password.get():
             answer['background']='green'
-            answer['text']= 'You are greate'
+            answer['text']= 'You are great'
             del_all_text()
 
         else:
@@ -20,8 +20,6 @@ def get_text():
     else:
         answer['background']='red'
         answer['text']='You are not input text'
-
-
 
 def del_all_text():
     name.delete(0,tk.END)
@@ -49,3 +47,12 @@ answer.grid(row=3,column=0,stick='we',ipady=20,padx=40,columnspan=2,pady=80)
 
 
 win.mainloop()
+
+
+
+
+
+
+
+
+

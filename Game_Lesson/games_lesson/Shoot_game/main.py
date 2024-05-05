@@ -1,7 +1,9 @@
 import wrap
 from wrap import sprite
 import random
+
 import enemieS
+
 import playeR
 
 wrap.world.create_world(800, 500)

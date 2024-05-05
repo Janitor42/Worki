@@ -7,7 +7,8 @@ win.geometry('400x500+400+300')
 win.config(background='black')
 
 def choice_list():
-    print(box.get())
+    second.create_win(box.get())
+
 
 text_box=['myself','my family','charity']
 box=ttk.Combobox(win,values=text_box,font=('Arial',20),

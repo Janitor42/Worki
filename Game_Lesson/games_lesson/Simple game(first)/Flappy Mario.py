@@ -152,6 +152,6 @@ def score():
             logic_score2=True
 
 
-import wrap_py
 
+import wrap_py
 wrap_py.app.start()

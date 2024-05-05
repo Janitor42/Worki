@@ -30,7 +30,7 @@ one.set('No')
 
 
 two = tk.IntVar()
-two.set(0)
+two.set(50000)
 
 meat = tk.Checkbutton(win, text='Do you eat meat?',
                       font=('Arial', 15),

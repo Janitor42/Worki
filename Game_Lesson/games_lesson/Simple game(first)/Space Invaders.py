@@ -12,7 +12,9 @@ enemy_name=["enemy_blue_down1","enemy_blue_down1","enemy_yellow_down1","enemy_pi
 position_enemy_x=50
 position_enemy_y=200
 proportions= 30
+
 count=0
+
 for g in range(len(enemy_name)):
     for i in range(10):
         enemy_list.append(sprite.add("pacman",position_enemy_x,position_enemy_y,enemy_name[g]))
@@ -25,6 +27,7 @@ for g in range(len(enemy_name)):
             proportions=23
     position_enemy_y-=30
     position_enemy_x=50
+
 #скорось движение врагов
 direction=2
 
@@ -125,6 +128,7 @@ def move_bullet():
     else:
             #Пуля всегда двигается за игроком (когда не летит)
             sprite.move_to(bullet, sprite.get_x(player), sprite.get_y(player))
+
 
 
 import wrap_py

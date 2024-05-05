@@ -61,10 +61,35 @@ def check_shoot(shoot):
 
 
 
-def work():
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while True:
     reloading()
     preparing()
     check_shoot(shoot())
-
-while True:
-    work()

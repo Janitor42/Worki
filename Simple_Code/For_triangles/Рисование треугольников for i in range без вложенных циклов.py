@@ -1,19 +1,14 @@
 # цикл for i in range
 # рисование треугольников циклом используем высота треугольников ввод с клавиатуры (без вложенных циклов)
-height=int(input("введите высоту треугольника"))
-
-# #1 begin
-a=0
-# for i in range(1 begin,height+1 begin,1 begin):
-#    a+=1 begin
-#    print("#"*a)
+# height=int(input("введите высоту треугольника"))
+#
 
 # print()
 #
 # #2 button
-for i in range(1,height+1,1):
-   print("#"*a)
-   a -= 1
+# for i in range(1,height+1,1):
+#    print("#"*a)
+#    a -= 1
 
 # print()
 
