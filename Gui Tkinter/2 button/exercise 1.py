@@ -13,7 +13,7 @@ def random_color():
         color_now=random.choice(use_colors)
         return color_now
     else:
-        return 'Мы закончили'
+        return 'Done'
 
 def choice_color():
     rd=random.choice(rd_colors)
@@ -24,35 +24,35 @@ def choice_color():
 
 def action_1():
     if bt_1['background']==color_now:
-        bt_1['text']='Молодец'
+        bt_1['text']='Good'
         use_colors.remove(color_now)
         bt_message['text']=f'{random_color()}'
     else:
-        bt_1['text']='Неа'
+        bt_1['text']='No'
 
 def action_2():
     if bt_2['background']==color_now:
-        bt_2['text']='Молодец'
+        bt_2['text']='Good'
         use_colors.remove(color_now)
         bt_message['text']=f'{random_color()}'
     else:
-        bt_2['text']='Неа'
+        bt_2['text']='No'
 
 def action_3():
     if bt_3['background']==color_now:
-        bt_3['text']='Молодец'
+        bt_3['text']='Good'
         use_colors.remove(color_now)
         bt_message['text']=f'{random_color()}'
     else:
-        bt_3['text']='Неа'
+        bt_3['text']='No'
 
 def action_4():
     if bt_4['background']==color_now:
-        bt_4['text']='Молодец'
+        bt_4['text']='Good'
         use_colors.remove(color_now)
         bt_message['text']=f' {random_color()}'
     else:
-        bt_4['text']='Неа'
+        bt_4['text']='No'
 
 win = tk.Tk()
 win.title('four colors')
