@@ -14,7 +14,7 @@ wrap.world.create_world(500,500)
 
 @wrap.on_key_up()
 def act():
-    ball.Ball()
+    ball_one.Ball()
 
 
 

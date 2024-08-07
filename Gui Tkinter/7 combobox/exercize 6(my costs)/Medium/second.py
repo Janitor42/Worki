@@ -4,7 +4,7 @@ from tkinter import ttk
 win = None
 
 'myself', 'my family', 'charity'
-
+a=0
 name = None
 sale = None
 

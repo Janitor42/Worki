@@ -39,9 +39,5 @@ button1.place(x=440,y=450)
 frame.pack(fill=tk.BOTH,expand=True)
 
 
-
-
-
-
 win.mainloop()
 

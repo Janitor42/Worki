@@ -25,7 +25,7 @@ wrap.world.create_world(win_x, win_y)
 wrap.world.set_back_color(255, 255, 255)
 
 begin = time.time()
-times_between = 0.1
+times_between = 1
 
 all_balls = []
 all_stars = []
@@ -37,7 +37,7 @@ def rd_not_zero(min, max):
 
 def create_one_star():
     all_stars.append(star_four.Star(x=rd(50, 450), y=rd(50, 450), size=rd(20, 80),
-                                    number=rd(-20, 1), list_star=all_stars))
+                                    number=rd(5, 20), list_star=all_stars))                        #здесь у звезд значения
 
 
 @wrap.on_key_down()

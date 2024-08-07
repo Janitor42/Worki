@@ -39,6 +39,7 @@ def button_left(pos_x, pos_y):
         if sp.is_collide_point(i.name, pos_x, pos_y):
             pause = True
             i.change_speed_ball()
+            pause=False
 
 
 def move_all():
