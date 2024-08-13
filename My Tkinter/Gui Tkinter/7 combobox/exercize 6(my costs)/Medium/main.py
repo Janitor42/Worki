@@ -6,7 +6,7 @@ win = tk.Tk()
 win.geometry('400x500+400+300')
 win.config(background='black')
 print(second.a)
-b=second.a=1
+b= second.a=1
 print(second.a)
 def choice_list():
     second.create_win(box.get())

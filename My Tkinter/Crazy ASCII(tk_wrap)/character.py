@@ -1,6 +1,11 @@
 import random as rd
 import string as st
 from wrap import sprite as sp
+import model
+import gui
+import tkinter as tk
+
+import controller
 
 count = 0
 screen_x = 800
@@ -12,21 +17,18 @@ def rd_not_zero(mini, maxi):
 
 
 class Character:
-    count = 0
+    def __init__(self):
 
-    def __init__(self, speed_x, speed_y):
-
-        self.__speed_x = speed_x
-        self.__speed_y = speed_y
+        self.__speed_x = rd_not_zero(-5,5)
+        self.__speed_y = rd_not_zero(-5,5)
         self.__impulse = rd_not_zero(-10, 10)
         self.name = sp.add_text(rd.choice(st.ascii_lowercase), rd.randint(50, 750), rd.randint(50, 750),
                                 bold=True, font_size=rd.randint(20, 40),
                                 text_color=(rd.randint(20, 254), rd.randint(20, 254), rd.randint(20, 254)),
                                 font_name='Comic Sans MS')
-        Character.count += 1
+
 
     def __del__(self):
-        Character.count -= 1
         sp.remove(self.name)
 
     def _check_window(self):
@@ -46,7 +48,3 @@ class Character:
         sp.move(self.name, self.__speed_x, self.__speed_y)
         sp.set_angle(self.name, sp.get_angle(self.name) + self.__impulse)
 
-    @staticmethod
-    def move_all(all_sym):
-        for i in all_sym:
-            i.move()
