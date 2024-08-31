@@ -13,8 +13,10 @@ win = screen.win
 gui.Gui(win)
 
 while True:
-    a = time.time()
+    # a = time.time()
     level.leveling()
+    ball.live_ball()
+    # blocks.check_collision()
+
     can.update()
-    blocks.dici_trye()
-    print(a - time.time())
+    # print(a - time.time())

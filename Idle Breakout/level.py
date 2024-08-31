@@ -13,7 +13,7 @@ def create_next():
 
 
 def make_level_1():
-    x_1 = 200
+    x_1 = 250
     y_1 = 20
     x_2 = x_1 + 60
     y_2 = y_1 + 25
@@ -30,7 +30,7 @@ def make_level_1():
 
 
 def make_level_2():
-    x_1 = 200
+    x_1 = 250
     y_1 = 20
     x_2 = x_1 + 60
     y_2 = y_1 + 25
@@ -53,5 +53,5 @@ def leveling():
         level += 1
         protection += 1
         create_level = True
-    if blocks.Block.all_blocks <= 0:
+    if blocks.Block.value_blocks_on_screen <= 0:
         create_level = False

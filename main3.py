@@ -1,36 +1,39 @@
 import tkinter as tk
 import math
 
-def check_collision(circle, square):
-    """Проверка коллизии между кругом и квадратом."""
-    circle_x, circle_y, circle_r = circle
-    square_x1, square_y1, square_x2, square_y2 = square
 
-    # Найти ближайшую точку на квадрате к окружности
-    nearest_x = max(square_x1, min(circle_x, square_x2))
-    nearest_y = max(square_y1, min(circle_y, square_y2))
+# Функция для проверки коллизии между шариком и прямоугольником
+def check_collision(circle, rectangle):
+    circle_x, circle_y, circle_radius = circle
+    rect_x1, rect_y1, rect_x2, rect_y2 = rectangle
 
-    # Рассчитать расстояние между центром окружности и ближайшей точкой
+    # Находим ближайшую точку на прямоугольнике к окружности
+    nearest_x = max(rect_x1, min(circle_x, rect_x2))
+    nearest_y = max(rect_y1, min(circle_y, rect_y2))
+
+    # Вычисляем расстояние между центром окружности и ближайшей точкой
     distance = math.sqrt((nearest_x - circle_x) ** 2 + (nearest_y - circle_y) ** 2)
 
-    # Проверить пересечение
-    return distance < circle_r
+    # Проверяем пересечение
+    return distance < circle_radius
 
+
+# Функция для отрисовки объектов на Canvas
 def draw_objects():
-    """Отрисовка объекта на Canvas."""
-    canvas.delete("all")  # Очистить Canvas
-    canvas.create_rectangle(square_x1, square_y1, square_x2, square_y2, fill="red")  # Квадрат
+    canvas.delete("all")  # Очистка Canvas
+    canvas.create_rectangle(rect_x1, rect_y1, rect_x2, rect_y2, fill="red")  # Прямоугольник
     canvas.create_oval(circle_x - circle_radius, circle_y - circle_radius,
                        circle_x + circle_radius, circle_y + circle_radius, fill="blue")  # Шарик
 
     # Проверка коллизии
-    if check_collision((circle_x, circle_y, circle_radius), (square_x1, square_y1, square_x2, square_y2)):
+    if check_collision((circle_x, circle_y, circle_radius), (rect_x1, rect_y1, rect_x2, rect_y2)):
         print("Collision detected!")
     else:
         print("No collision.")
 
+
+# Функция для движения шарика
 def move_circle(dx, dy):
-    """Движение шарика."""
     global circle_x, circle_y
 
     circle_x += dx
@@ -48,8 +51,9 @@ def move_circle(dx, dy):
 
     draw_objects()
 
+
+# Обработчик нажатий клавиш
 def on_key_press(event):
-    """Обработчик нажатия клавиши."""
     if event.keysym == "Up":
         move_circle(0, -5)
     elif event.keysym == "Down":
@@ -59,20 +63,21 @@ def on_key_press(event):
     elif event.keysym == "Right":
         move_circle(5, 0)
 
+
 # Создание главного окна
 root = tk.Tk()
 canvas = tk.Canvas(root, width=400, height=400, bg="white")
 canvas.pack()
 
-# Параметры квадрата
-square_x1, square_y1 = 150, 150
-square_x2, square_y2 = 250, 250
+# Параметры прямоугольника
+rect_x1, rect_y1 = 150, 150
+rect_x2, rect_y2 = 250, 250
 
 # Параметры шарика
-circle_x, circle_y = 200, 200  # Центр шара
-circle_radius = 30              # Радиус шара
+circle_x, circle_y = 200, 200  # Центр шарика
+circle_radius = 30  # Радиус шарика
 
-# Связываем обработчик событий клавиатуры
+# Связывание обработчика событий клавиатуры
 root.bind("<KeyPress>", on_key_press)
 
 # Изначальная отрисовка объектов
