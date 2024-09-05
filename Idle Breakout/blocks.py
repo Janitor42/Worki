@@ -1,105 +1,75 @@
-import math
-import time
+import random
+from wrap import sprite as sp
+import wrap
+import finance
+import events
 
-import screen
-import mouse
-import ball
-
-can = screen.can
+colors = [[20, 150, 255], [218, 71, 255], [250, 144, 77],
+          [255, 255, 94], [92, 255, 173], [97, 92, 255],
+          [247, 30, 197], [255, 59, 88], [125, 245, 86]]
 
 
-def check_collision():
-    for one_block in Block.list_blocks:
+def create_image_value(count):
+    if count >= 10000:
+        return '' + str(count) + ''
+    if count >= 1000:
+        return ' ' + str(count) + ' '
+    if count >= 100:
+        return '  ' + str(count) + '  '
+    if count >= 10:
+        return '   ' + str(count) + '   '
+    if count < 10:
+        return '    ' + str(count) + '    '
 
-        pos_block = can.coords(one_block)
-        x_1, y_1, x_2, y_2 = pos_block
 
-        for one_ball in ball.Ball.all_ball:
-
-            pos_ball = can.coords(one_ball)
-            radius = (pos_ball[2] - pos_ball[0]) // 2
-            x_center = pos_ball[0] + radius
-            y_center = pos_ball[1] + radius
-
-            nearest_x = max(x_1, min(x_center, x_2))
-            nearest_y = max(y_1, min(y_center, y_2))
-
-            distance = math.sqrt((nearest_x - x_center) ** 2 + (nearest_y - y_center) ** 2)
-
-            if distance <= radius:
-                print('collide', distance, radius,)
+# def change_color():
+#
 
 
 class Block:
-    value_blocks_on_screen = 0
-    list_blocks = []
-    list_texts = []
+    all_damage = 0
+    protect_power = 1
+    all_blocks = []
 
-    def __init__(self, x_1, y_1, x_2, y_2, protection):
-        self.rectangle = can.create_rectangle(x_1, y_1, x_2, y_2,
-                                              fill='DodgerBlue1',
-                                              tags='block')
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-        Block.list_blocks.append(self.rectangle)
+        self.line_with_text = create_image_value(Block.protect_power)
 
-        x = x_2 - x_1
-        y = y_2 - y_1
-        x = x_1 + x // 2
-        y = y_1 + y // 2
+        self.value = Block.protect_power
 
-        self.value = protection
-        self.text = can.create_text(x, y,
-                                    text=str(self.value),
-                                    font=('Times New Roman', 15),
-                                    tags='block')
+        self.name = sp.add_text(self.line_with_text, self.x, self.y, font_name='Times New Roman')
+        color_now = (self.value % 10) - 1
 
-        Block.list_texts.append(self.text)
+        wrap.sprite_text.set_back_color(self.name, colors[color_now][0], colors[color_now][1], colors[color_now][2])
 
-        self.can = can
-        Block.value_blocks_on_screen += 1
+        self.state = True
 
-        # события с мышью
-        self.can.tag_bind('block', '<Button-1>', self.mouse_click_on_block)
+        Block.all_blocks.append(self)
+        print(sp.get_height(self.name))
 
     def __del__(self):
-        Block.list_blocks.remove(self.rectangle)
-        Block.list_texts.remove(self.text)
+        sp.remove(self.name)
 
-        self.can.delete(self.rectangle)
-        self.can.delete(self.text)
+    def change_block(self, pover_ball):
 
-    """Связанное с шариками"""
+        Block.all_damage += pover_ball
+        finance.count_money(pover_ball)
 
-    def check_collision(self):
-        print(self.rectangle)
+        events.redraw_text(Block.all_damage)
 
-    """Связанное с мышкой"""
+        self.value -= pover_ball
+        value = create_image_value(self.value)
+        wrap.sprite_text.set_text(self.name, str(value))
 
-    def check(self):
+        color_now = (self.value % 10) - 1
+
+        wrap.sprite_text.set_back_color(self.name, colors[color_now][0], colors[color_now][1], colors[color_now][2])
+
         if self.value <= 0:
-            self.__del__()
-            Block.value_blocks_on_screen -= 1
+            self.state = False
 
-    def mouse_click_on_block(self, even):
-        name = self.can.find_closest(even.x, even.y)
-
-        name = name[0]
-        if name % 2 != 0:
-            self.rectangle = name
-            self.text = name + 1
-
-            self.can.itemconfigure(self.rectangle, fill='red')
-            self.can.itemconfigure(self.text, text=self.subtract_from_block_on_click())
-            self.check()
-
-        elif name % 2 == 0:
-            self.text = name
-            self.rectangle = name - 1
-
-            self.can.itemconfigure(self.rectangle, fill='red')
-            self.can.itemconfigure(self.text, text=self.subtract_from_block_on_click())
-            self.check()
-
-    def subtract_from_block_on_click(self):
-        self.value = int(self.can.itemcget(self.text, 'text')) - mouse.Mouse.power
-        self.can.itemconfigure(self.text, text=str(self.value))
+    def remove_block(self):
+        if not self.state:
+            Block.all_blocks.remove(self)

@@ -1,22 +1,13 @@
-import screen
+import blocks
+import screen_wrap
+import screen_tk
 import events
 import level
-import mouse
-import ball
-import gui
-import blocks
-import time
+import balls
+import finance
+from threading import Thread
 
-can = screen.can
-win = screen.win
+Thread(target=screen_tk.run_tk_gui).start()
+import wrap_py
 
-gui.Gui(win)
-
-while True:
-    # a = time.time()
-    level.leveling()
-    ball.live_ball()
-    # blocks.check_collision()
-
-    can.update()
-    # print(a - time.time())
+wrap_py.app.start()
