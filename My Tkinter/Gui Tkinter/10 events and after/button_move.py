@@ -48,6 +48,7 @@ def move_to_me(event):
     # print(event.y_root) -* все тоже самое для x
     # print(event.widget) # определяет кнопку и отображает ее (хоть мышь хоть клавиатура)
     global x_bt,y_bt
+    print(event.x)
     if click:
         x_bt=x_bt+event.x-10
         y_bt=y_bt+event.y-10
@@ -71,6 +72,6 @@ button.place(x=x_bt,y=y_bt)
 button.bind('<ButtonPress>',on_click)
 button.bind('<ButtonRelease>',out_click)
 
-button.bind('<Motion>',move_to_me)
+win.bind('<Motion>',move_to_me)
 
 win.mainloop()

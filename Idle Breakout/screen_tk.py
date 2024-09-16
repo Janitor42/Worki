@@ -1,39 +1,20 @@
 import tkinter as tk
-from tkinter import ttk
-import finance
-import events
+import frame_statistics
+import frame_shop_balls
+import frame_main
+win = None
 
-all_tk = None
 
 
 def run_tk_gui():
-    global all_tk
-    all_tk = Screen_tk()
-    all_tk.win.mainloop()
+    global win
+
+    win = tk.Tk()
+    win.geometry('400x500+190+270')
+    win.config()
+    frame_statistics.Screen_statistics(win)
+    frame_shop_balls.create_shop(win)
+    frame_main.create_frame_main(win)
 
 
-class Screen_tk:
-    def __init__(self):
-        # окно
-        self.win = tk.Tk()
-        self.win.geometry('300x500')
-        self.win.minsize(300, 500)
-
-        # количество уже уничтоженных блоков
-        self.label_damage = tk.Label(self.win,
-                                     text=f'Bricks damage \n{0}',
-                                     font=('Arial', 14))
-        self.label_damage.pack(side='right', anchor='se')
-
-        # отображение денег
-        self.label_money = tk.Label(self.win, text=f' $ \n{0}',
-                                    font=('Arial', 14))
-        self.label_money.pack(side='left', anchor='se')
-
-        # тестовая кнопка на покупку шара
-        self.bt = tk.Button(self.win, text='O', font=('Arial', 15, 'bold'), foreground='yellow', background='#b4b9d4',
-                            command=events.giv_money)
-        self.bt.pack(side='right', anchor='nw')
-
-
-
+    win.mainloop()

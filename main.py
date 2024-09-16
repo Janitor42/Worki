@@ -1,35 +1,26 @@
-# less_than_100(22, 15) ➞ True
-# # 22 + 15 = 37
-#
-# less_than_100(83, 34) ➞ False
-# # 83 + 34 = 117
-#
-# less_than_100(3, 77) ➞ true
+import time
+
+colors = [0, 0, 0]
 
 
+def inversion():
+    global colors
+    if colors[0] < 255:
+        colors[0] = colors[0] + 1
+    else:
+        colors[0] = 0
+        if colors[1] < 255:
+            colors[1] += 1
+        else:
+            colors[1] = 0
+            if colors[2] < 255:
+                colors[2] += 1
+            else:
+                colors = [0, 0, 0]
+                time.sleep(10)
 
 
-import random
-
-my_list=[]
-
-for i in range(100):
-    my_list.append(random.choice(['sofa','tablet','bed']))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+while True:
+    inversion()
+    time.sleep(0.0001)
+    print(colors)

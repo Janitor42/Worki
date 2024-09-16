@@ -4,16 +4,17 @@ import tkinter as tk
 win2 = None
 play = None
 feed = None
-clean=None
+clean = None
 
-button_go=None
-main_text=None
+button_go = None
+main_text = None
 state = None
-states=['play','feed','clean']
-state_cat=[False,False,False]
+states = ['play', 'feed', 'clean']
+state_cat = [False, False, False]
 
-text_cat_before=['Ты поиграл с котиком','Ты покормил котика','Ты прибрал за котиком']
-text_cat_after=['Котик больше не хочет играть','Котик больше не хочет есть','Ты уже все прибрал']
+text_cat_before = ['Ты поиграл с котиком', 'Ты покормил котика', 'Ты прибрал за котиком']
+text_cat_after = ['Котик больше не хочет играть', 'Котик больше не хочет есть', 'Ты уже все прибрал']
+
 
 def create_radiobutton():
     global play, feed
@@ -37,14 +38,13 @@ def create_radiobutton():
     feed.pack(pady=[20, 20])
 
     clean = tk.Radiobutton(win2, text='clean up after the cat',
-                          font=('Arial', 20),
-                          width=20,
-                          anchor='w',
-                          variable=state,
-                          value="clean"
-                          )
+                           font=('Arial', 20),
+                           width=20,
+                           anchor='w',
+                           variable=state,
+                           value="clean"
+                           )
     clean.pack(pady=[20, 20])
-
 
     button_go = tk.Button(win2, text='GO',
                           font=('Times', 20, 'bold'),
@@ -52,23 +52,21 @@ def create_radiobutton():
                           command=your_choice)
     button_go.pack()
 
+
 def your_choice():
     global main_text
     for i in range(3):
-        if state.get()==states[i] and state_cat[i]==False:
+        if state.get() == states[i] and state_cat[i] == False:
             main_text.set(text_cat_before[i])
-            state_cat[i]=True
-        elif state.get()==states[i] and state_cat[i]==True:
+            state_cat[i] = True
+        elif state.get() == states[i] and state_cat[i] == True:
             main_text.set(text_cat_after[i])
     if False not in state_cat:
         fin(win2)
 
 
-
-
-
 def create_variables():
-    global state,main_text
+    global state, main_text
 
     state = tk.StringVar()
     state.set('No')
@@ -77,14 +75,12 @@ def create_variables():
     main_text.set('Сейчас котик просто отдыхает')
 
 
-
 def create_win2():
     global win2
     win2 = tk.Toplevel()
     win2.geometry('500x500+900+200')
     win2.config(background='black')
     win2.title('select')
-
 
 
 def fin(win):

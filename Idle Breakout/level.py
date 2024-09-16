@@ -1,7 +1,7 @@
 import blocks
-import screen_wrap
+import frame_statistics
 
-level = 0
+level = 1
 
 
 def make(x, y, rep, count_need, new_y):
@@ -49,7 +49,7 @@ def make_level_5():
         y += 100
 
 
-def check_level():#можно написать проще (потом)
+def check_level():  # можно написать проще (потом)
 
     global level
     if len(blocks.Block.all_blocks) <= 0:
@@ -57,19 +57,24 @@ def check_level():#можно написать проще (потом)
             make_level_1()
             level += 1
             blocks.Block.protect_power += 1
+            frame_statistics.Screen_statistics.all_statistics.inf_level['text'] = f' level \n{level}'
         elif level % 10 in [1, 6]:
             make_level_2()
             level += 1
             blocks.Block.protect_power += 1
+            frame_statistics.Screen_statistics.all_statistics.inf_level['text'] = f' level \n{level}'
         elif level % 10 in [2, 7]:
             make_level_3()
             level += 1
             blocks.Block.protect_power += 1
+            frame_statistics.Screen_statistics.all_statistics.inf_level['text'] = f' level \n{level}'
         elif level % 10 in [3, 8]:
             make_level_4()
             level += 1
             blocks.Block.protect_power += 1
+            frame_statistics.Screen_statistics.all_statistics.inf_level['text'] = f' level \n{level}'
         elif level % 10 in [4, 9]:
             make_level_5()
             level += 1
             blocks.Block.protect_power += 1
+            frame_statistics.Screen_statistics.all_statistics.inf_level['text'] = f' level \n{level}'

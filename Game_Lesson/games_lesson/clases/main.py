@@ -16,7 +16,7 @@ q.b=100
 q.add_five()
 shariki+=[a,q,w]
 
-@wrap.always(10)
+@wrap.always(25)
 def game():
     for i in shariki:
         i.go()

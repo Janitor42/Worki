@@ -10,15 +10,19 @@ win.config(background='black')
 #что в свою очередь меняет текст который пишется под флажками
 #win.config вызывается в каждом if и меняет экран на другой цвет (совпадает с флажками)
 def see():
-    if color.get() == 'black':
-        text.set('выбран black')
-        win.config(background='black')
-    if color.get() == 'green':
-        text.set('выбран green')
-        win.config(background='green')
-    if color.get() == 'yellow':
-        win.config(background='yellow')
-        text.set('выбран yellow')
+    text.set(color.get())
+    win.config(background=text.get())
+
+
+    # if color.get() == 'black':
+    #     text.set('выбран black')
+    #     win.config(background='black')
+    # if color.get() == 'green':
+    #     text.set('выбран green')
+    #     win.config(background='green')
+    # if color.get() == 'yellow':
+    #     win.config(background='yellow')
+    #     text.set('выбран yellow')
 
 color = tk.StringVar()
 color.set('No')

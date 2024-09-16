@@ -1,8 +1,7 @@
-import random
 from wrap import sprite as sp
 import wrap
 import finance
-import events
+import frame_statistics
 
 colors = [[20, 150, 255], [218, 71, 255], [250, 144, 77],
           [255, 255, 94], [92, 255, 173], [97, 92, 255],
@@ -22,8 +21,6 @@ def create_image_value(count):
         return '    ' + str(count) + '    '
 
 
-# def change_color():
-#
 
 
 class Block:
@@ -47,7 +44,7 @@ class Block:
         self.state = True
 
         Block.all_blocks.append(self)
-        print(sp.get_height(self.name))
+
 
     def __del__(self):
         sp.remove(self.name)
@@ -57,7 +54,7 @@ class Block:
         Block.all_damage += pover_ball
         finance.count_money(pover_ball)
 
-        events.redraw_text(Block.all_damage)
+        frame_statistics.redraw_text(Block.all_damage)
 
         self.value -= pover_ball
         value = create_image_value(self.value)
@@ -72,4 +69,5 @@ class Block:
 
     def remove_block(self):
         if not self.state:
+            wrap.sprite.hide(self.name)
             Block.all_blocks.remove(self)
