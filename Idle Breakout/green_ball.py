@@ -10,16 +10,12 @@ import screen_wrap
 class Green_ball(ball.Ball):
 
     def __init__(self):
+
         ball.Ball.__init__(self)
         wrap.sprite_text.set_text_color(self.name, 16, 145, 1)
-        self.state = False
-        self.target_x = 0
-        self.target_y = 0
-        self.speed_x_and_y = 6
-        self.choice=None
-
 
     def move(self):
+
         self._check_window()
         if not self.state:
             sp.move(self.name, self.speed_x, 0)
@@ -32,7 +28,8 @@ class Green_ball(ball.Ball):
                 self.check_collide_x()
                 self.check_collide_y()
             else:
-                self.state=False
+                self.state = False
+
     def move_to(self):
 
         self.choice = random.choice(blocks.Block.all_blocks)
@@ -49,6 +46,7 @@ class Green_ball(ball.Ball):
                 break
 
     def check_collide_y(self):
+
         for one_block in blocks.Block.all_blocks:
             if sp.is_collide_sprite(self.name, one_block.name):
                 blocks.Block.change_block(one_block, pover_ball=self.power)

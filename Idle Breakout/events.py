@@ -17,9 +17,10 @@ def click(pos_x, pos_y):
 def game():
     for i in ball.Ball.all_balls:
         i.move()
-        i.effects()
+        i.add_actions()
 
     for i in blocks.Block.all_blocks:
         i.remove_block()
 
     level.check_level()
+    print(len(ball.Ball.all_balls))

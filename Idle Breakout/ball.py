@@ -33,6 +33,24 @@ class Ball:
                                 bold=True)
         sp.set_width_proportionally(self.name, 16)
 
+        # green
+        self.target_x = 0
+        self.target_y = 0
+        self.speed_x_and_y = 6
+        self.choice = None
+        self.state = False
+
+        # purple
+        self.max_size_contour = 60
+        self.size_contour = 60
+
+        self.contour = sp.add_text('O', self.x, self.y,
+                                   font_name='Arial',
+                                   text_color=(218, 71, 255),
+                                   bold=True, visible=False)
+
+        # blue
+
         Ball.all_balls.append(self)
 
         frame_statistics.Screen_statistics.all_statistics.inf_balls_on_screen[
@@ -42,15 +60,18 @@ class Ball:
 
         if sp.get_left(self.name) <= 0:
             self.speed_x = abs(self.speed_x)
+
         if sp.get_right(self.name) >= screen_wrap.x:
             self.speed_x = -self.speed_x
 
         if sp.get_top(self.name) <= 0:
             self.speed_y = abs(self.speed_y)
+
         if sp.get_bottom(self.name) >= screen_wrap.y:
             self.speed_y = -self.speed_y
 
     def move(self):
+
         self._check_window()
         sp.move(self.name, self.speed_x, 0)
         self.check_collide_x()
@@ -58,6 +79,7 @@ class Ball:
         self.check_collide_y()
 
     def check_collide_x(self):
+
         for one_block in blocks.Block.all_blocks:
             if sp.is_collide_sprite(self.name, one_block.name):
                 blocks.Block.change_block(one_block, pover_ball=self.power)
@@ -72,5 +94,6 @@ class Ball:
                 self.speed_y = -self.speed_y
                 sp.move(self.name, 0, self.speed_y)
                 break
-    def effects(self):
+
+    def add_actions(self):
         pass

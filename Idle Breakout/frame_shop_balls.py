@@ -5,6 +5,7 @@ import finance
 import red_ball
 import purple_ball
 import green_ball
+import blue_ball
 
 prices = [25, 200, 1500, 10000, 30, 75000]  # [25, 200, 1500, 10000, 75000, 75000]
 colors = ['yellow', 'purple', 'green', 'blue', 'red', 'black']
@@ -45,5 +46,7 @@ class Shop_ball:
             purple_ball.Purple_ball()
         if self.name in 'green':
             green_ball.Green_ball()
+        if self.name in 'blue':
+            blue_ball.Blue_ball()
 
 # todo (база данных покемонов) pokeapi

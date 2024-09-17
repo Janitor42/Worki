@@ -22,5 +22,5 @@ def inversion():
 
 while True:
     inversion()
-    time.sleep(0.0001)
+    # time.sleep(0.000001)
     print(colors)

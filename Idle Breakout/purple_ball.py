@@ -10,13 +10,6 @@ class Purple_ball(ball.Ball):
         ball.Ball.__init__(self)
         wrap.sprite_text.set_text_color(self.name, 218, 71, 255)
 
-        self.max_size_contour = 60
-        self.size_contour = 60
-        self.contour = sp.add_text('O', self.x, self.y,
-                                   font_name='Arial',
-                                   text_color=(218, 71, 255),
-                                   bold=True, visible=False)
-        sp.set_width_proportionally(self.contour, self.size_contour)
 
     def move_contour(self):
         sp.move_to(self.contour, sp.get_x(self.name), sp.get_y(self.name))
@@ -46,7 +39,7 @@ class Purple_ball(ball.Ball):
                 sp.move(self.name, 0, self.speed_y)
                 break
 
-    def effects(self):
+    def add_actions(self):
         sp.set_width_proportionally(self.contour, self.size_contour)
         self.size_contour -= 2
         if self.size_contour <= 10:
