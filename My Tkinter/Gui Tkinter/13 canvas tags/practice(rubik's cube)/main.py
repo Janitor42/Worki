@@ -23,11 +23,16 @@ all_field=field_x+field_y+field_z
 
 color_x=['red',"blue",'orange']
 color_y=['pink',"purple",'gray']
-color_z=['yellow,brown','green']
+color_z=['yellow','lime','green']
+
+
+
 
 
 can.itemconfig('x',fill=rd.choice(color_x))
 can.itemconfig('y',fill=rd.choice(color_y))
 can.itemconfig('z',fill=rd.choice(color_z))
+
+#todo сделать что бы цвета были случайные а при помощи тега все менялось на правильные места
 
 tk.mainloop()

@@ -28,13 +28,13 @@ print(first)
 # тегу с помощью метода find_withtag(), в который передается имя тега.
 # по тегу ищем номера(идентификаторы элементов)
 for i in can.find_withtag('one'):
-    print(i)
+    print(i.conjugate())
 
 
 #удаление tag через dtags()
 can.dtag(line,'just line')
 first = can.gettags(line)
-print(first)
+
 
 #Конфигурация через тег
 #С помощью метода itemconfigure() для элементов с определенным тегом можно установить различные опции

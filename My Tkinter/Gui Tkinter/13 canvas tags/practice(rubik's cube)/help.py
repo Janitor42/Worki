@@ -1,3 +1,10 @@
+
+
+color_x=['red',"blue",'orange']
+color_y=['pink',"purple",'gray']
+color_z=['yellow','lime','green']
+
+
 def create_field_x(field_x, can):
     x = 150
     y = 150
@@ -10,7 +17,6 @@ def create_field_x(field_x, can):
             y += 66
             x = 150
         field_x.append(square)
-
 
 def create_field_y(field_y, can):
     x_begin = 150

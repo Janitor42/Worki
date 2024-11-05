@@ -3,8 +3,7 @@ import blocks
 from wrap import sprite as sp
 import random as rd
 import frame_statistics
-
-
+from time import time
 def rd_not_zero(mini, maxi):
     return rd.choice([i for i in range(mini, maxi + 1) if i != 0])
 
@@ -19,11 +18,20 @@ def define_y(x):
 class Ball:
     max_ball = 50
     all_balls = []
+    all_id = []
+    numbers = 0
 
-    def __init__(self):
+    def __init__(self, id):
+        Ball.all_id.append(id)
+        Ball.numbers += 1
+
         self.power = 1
+        self.speed_time = 0.04
+        self.start_time=time()
+
         self.x = screen_wrap.x // 2
         self.y = screen_wrap.y // 2
+
         self.speed_x = rd_not_zero(-3, 3)
         self.speed_y = define_y(self.speed_x)
 
@@ -33,28 +41,10 @@ class Ball:
                                 bold=True)
         sp.set_width_proportionally(self.name, 16)
 
-        # green
-        self.target_x = 0
-        self.target_y = 0
-        self.speed_x_and_y = 6
-        self.choice = None
-        self.state = False
-
-        # purple
-        self.max_size_contour = 60
-        self.size_contour = 60
-
-        self.contour = sp.add_text('O', self.x, self.y,
-                                   font_name='Arial',
-                                   text_color=(218, 71, 255),
-                                   bold=True, visible=False)
-
-        # blue
-
         Ball.all_balls.append(self)
 
-        frame_statistics.Screen_statistics.all_statistics.inf_balls_on_screen[
-            'text'] = f' Balls \n{len(Ball.all_balls)}/50'
+        frame_statistics.Screen_statistics.all_statistics.inf_balls_on_screen['text'] \
+            = f' Balls \n{Ball.numbers}/50'
 
     def _check_window(self):
 
@@ -71,12 +61,13 @@ class Ball:
             self.speed_y = -self.speed_y
 
     def move(self):
-
-        self._check_window()
-        sp.move(self.name, self.speed_x, 0)
-        self.check_collide_x()
-        sp.move(self.name, 0, self.speed_y)
-        self.check_collide_y()
+        if self.start_time+self.speed_time<time():
+            self._check_window()
+            sp.move(self.name, self.speed_x, 0)
+            self.check_collide_x()
+            sp.move(self.name, 0, self.speed_y)
+            self.check_collide_y()
+            self.start_time=time()
 
     def check_collide_x(self):
 

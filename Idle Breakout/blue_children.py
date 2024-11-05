@@ -1,23 +1,24 @@
-import ball
 import blocks
 from wrap import sprite as sp
 import wrap
-import screen_wrap
+
+import ball
 
 
 class Blue_children(ball.Ball):
     def __init__(self, parent):
-        ball.Ball.__init__(self)
+        ball.Ball.__init__(self, id=id)
         self.x = sp.get_x(parent.name)
         self.y = sp.get_y(parent.name)
         sp.move_to(self.name, self.x, self.y)
 
         wrap.sprite_text.set_text_color(self.name, 0, 30, 201)
-        sp.set_width_proportionally(self.name, 11)
+        sp.set_width_proportionally(self.name, 8)
+
+        self.state = 'go'
 
     def __del__(self):
         sp.remove(self.name)
-        sp.remove(self.contour)
 
     def move(self):
         self._check_window()

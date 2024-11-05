@@ -18,7 +18,7 @@ canvas.create_polygon((10, 80), (70, 30), (130, 80), fill=selected_color.get(), 
 
 
 def select():
-    canvas.itemconfigure("house", fill=selected_color.get())
+    canvas.itemconfig("house", fill=selected_color.get())
     canvas.itemconfigure("roof", fill=selected_color_roof.get())
 
 

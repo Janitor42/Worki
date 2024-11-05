@@ -60,6 +60,7 @@ def move_right(Event=None):
     if not dont_move:
         x = x + 30
         button.place(x=x, y=y)
+
     fin()
 
     # button.after(100,move_up)
@@ -81,7 +82,6 @@ dot.place(x=x_dot,y=y_dot)
 
 button=tk.Button(win,text='go',font=size)
 button.place(x=30,y=30)
-
 
 
 win.bind("<Down>",move_down)

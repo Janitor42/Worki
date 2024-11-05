@@ -7,8 +7,8 @@ import blue_children
 
 
 class Blue_ball(ball.Ball):
-    def __init__(self):
-        ball.Ball.__init__(self)
+    def __init__(self, id=id):
+        ball.Ball.__init__(self, id=id)
         wrap.sprite_text.set_text_color(self.name, 0, 30, 201)
 
     def _check_window(self):
@@ -31,6 +31,6 @@ class Blue_ball(ball.Ball):
 
     def create_children(self):
         for i in range(2):
+            ball.Ball.numbers -= 1
             blue_children.Blue_children(self)
-
 

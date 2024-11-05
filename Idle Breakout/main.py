@@ -11,6 +11,7 @@ import frame_main
 from threading import Thread
 
 Thread(target=screen_tk.run_tk_gui).start()
-import wrap_py
 
+
+import wrap_py
 wrap_py.app.start()

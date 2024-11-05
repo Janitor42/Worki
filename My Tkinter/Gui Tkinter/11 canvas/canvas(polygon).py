@@ -33,8 +33,7 @@ can.pack(expand=True)
 poli = (
     (10, 10),
     (30, 100),
-    (100, 50),
-    (500,500),
+
 )
 
 can.create_polygon(*poli, fill='lime', width=3, outline='blue', activefill='pink', activeoutline='black')

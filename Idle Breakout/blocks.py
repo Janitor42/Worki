@@ -21,8 +21,6 @@ def create_image_value(count):
         return '    ' + str(count) + '    '
 
 
-
-
 class Block:
     all_damage = 0
     protect_power = 1
@@ -44,7 +42,6 @@ class Block:
         self.state = True
 
         Block.all_blocks.append(self)
-
 
     def __del__(self):
         sp.remove(self.name)

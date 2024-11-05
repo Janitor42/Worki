@@ -67,10 +67,8 @@ def your_choice():
 
 def create_variables():
     global state, main_text
-
     state = tk.StringVar()
     state.set('No')
-
     main_text = tk.StringVar()
     main_text.set('Сейчас котик просто отдыхает')
 

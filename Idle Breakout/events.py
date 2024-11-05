@@ -3,15 +3,23 @@ import blocks
 import ball
 import level
 import hand
+import creator_balls
+import screen_wrap
 
 
-import frame_main
 @wrap.on_mouse_down(wrap.BUTTON_LEFT)
 def click(pos_x, pos_y):
     for i in blocks.Block.all_blocks:
         if wrap.sprite.is_collide_point(i.name, pos_x, pos_y, use_rect=True):
             i.change_block(hand.Hand.power)
 
+
+
+@wrap.on_key_down(wrap.K_UP)
+def move_faster():
+    for i in ball.Ball.all_balls:
+        i.speed_time=0.001
+    print(1111)
 
 @wrap.always(20)
 def game():
@@ -23,4 +31,5 @@ def game():
         i.remove_block()
 
     level.check_level()
-    print(len(ball.Ball.all_balls))
+
+    creator_balls.add_new_balls()

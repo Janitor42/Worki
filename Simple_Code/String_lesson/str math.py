@@ -79,5 +79,6 @@ kick()
 order_signs()
 
 # endregion
+
 operations()
 print(all[0])

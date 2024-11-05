@@ -9,10 +9,19 @@ import screen_wrap
 
 class Green_ball(ball.Ball):
 
-    def __init__(self):
+    def __init__(self,id=id):
 
-        ball.Ball.__init__(self)
+        ball.Ball.__init__(self,id=id)
         wrap.sprite_text.set_text_color(self.name, 16, 145, 1)
+
+
+        # green
+        self.target_x = 0
+        self.target_y = 0
+        self.speed_x_and_y = 6
+        self.choice = None
+        self.state = False
+
 
     def move(self):
 

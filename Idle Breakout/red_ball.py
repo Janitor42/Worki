@@ -5,8 +5,8 @@ import wrap
 
 
 class Red_ball(ball.Ball):
-    def __init__(self):
-        ball.Ball.__init__(self)
+    def __init__(self,id=id):
+        ball.Ball.__init__(self,id=id)
         wrap.sprite_text.set_text_color(self.name, 255, 59, 88)
 
     def check_collide_x(self):
