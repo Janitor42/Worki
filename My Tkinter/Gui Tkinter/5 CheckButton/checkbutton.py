@@ -38,7 +38,8 @@ meat = tk.Checkbutton(win, text='Do you eat meat?',
                       anchor='w',
                       variable=two,# определяем переменную к этому флажку
                       offvalue=0,#значение когда галка не стоит
-                      onvalue=1#значение когда галка стоит
+                      onvalue=1,
+                      state='disabled'#значение когда галка стоит
                       )  # создание класса Checkbutton и
 # сохранение его экземпляра в переменной meat
 
@@ -47,7 +48,8 @@ fish = tk.Checkbutton(win, text='Do you eat fish?', font=('Arial', 15),
                       anchor='w',
                       variable=one,
                       offvalue='No',
-                      onvalue='Yes')
+                      onvalue='Yes',
+                      state='normal')
 
 bread = tk.Checkbutton(win, text='Do you eat bread?',
                        font=('Arial', 15),

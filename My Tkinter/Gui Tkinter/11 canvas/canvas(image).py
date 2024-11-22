@@ -14,7 +14,7 @@ can = tk.Canvas(bg='white', width=int(x) - 50, height=int(y) - 50)
 can.pack(expand=True)
 
 
-python_image=tk.PhotoImage(file='picture.png')
+python_image=tk.PhotoImage(file='picture.jpg')
 #класс PhotoImage принимает файл (если он в другой папке - нужен import
 
 # В данном случае координаты представлены точкой с x=10 и y=10,

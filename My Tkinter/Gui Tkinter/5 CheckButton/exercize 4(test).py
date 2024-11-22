@@ -58,6 +58,7 @@ def disabled():
 
 
 variables=[]
+
 for i in range(5):
     variables.append(tk.StringVar())
     variables[-1].set('No')

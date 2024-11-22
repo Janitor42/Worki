@@ -33,6 +33,6 @@ can.itemconfig('x',fill=rd.choice(color_x))
 can.itemconfig('y',fill=rd.choice(color_y))
 can.itemconfig('z',fill=rd.choice(color_z))
 
-#todo сделать что бы цвета были случайные а при помощи тега все менялось на правильные места
+
 
 tk.mainloop()

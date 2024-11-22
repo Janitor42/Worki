@@ -24,8 +24,8 @@ def rd_place():
 
 def collide():
     global x_dot, y_dot
-    if x_bt + 10 in [i for i in range(x_dot - 10, x_dot + size + 10)] and y_bt + 10 in [i for i in range(y_dot - 10,
-                                                                                    y_dot + size + 10)]:
+    if (x_bt + 10 in [i for i in range(x_dot - 10, x_dot + size + 10)]
+            and y_bt + 10 in [i for i in range(y_dot - 10,y_dot + size + 10)]):
         button.place(x=x_dot, y=y_dot)
         count.set(int(count.get()) + 1)
         x_dot = rd_place()

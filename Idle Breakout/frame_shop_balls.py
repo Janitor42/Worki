@@ -49,5 +49,3 @@ class Shop_ball:
     def redefinition(self, id):
         creator_balls.create_new_record(self.name, id)
 
-# todo (база данных покемонов) pokeapi
-# todo object lock in module Thread

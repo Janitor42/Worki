@@ -379,3 +379,10 @@
 # print(s)
 
 
+a=[10]
+
+b=[3,4,5]
+
+while a not in b:
+    b.append(a)
+print(b)

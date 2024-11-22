@@ -26,5 +26,6 @@ button.bind("<Button>",change_text)
 win.bind('<Return>',change_text)
 
 
+
 win.mainloop()
 # https://metanit.com/python/tkinter/2.20.php

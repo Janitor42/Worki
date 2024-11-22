@@ -25,7 +25,7 @@ can.pack(expand=True)
 # activestipple: шаблон заполнения фигуры при наведении курсора
 
 
-can.create_arc((200,200,400,400), fill='lime', width=3, outline='blue', activefill='pink', activeoutline='black')
+a=can.create_arc((200,200,400,400), fill='lime', width=3, outline='blue', activefill='pink', activeoutline='black')
 can.create_arc((400,200,200,400), fill='orange', width=3, outline='blue', activefill='pink', activeoutline='black')
 
 win.mainloop()

@@ -49,7 +49,7 @@ def move_up(Event=None):
         y = y - 30
         button.place(x=x, y=y)
     fin()
-def move_left(Event=None):
+def move_left(Event):
     global x
     if not dont_move:
         x = x - 30

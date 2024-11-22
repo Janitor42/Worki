@@ -8,7 +8,7 @@ import screen_wrap
 
 class Purple_ball(ball.Ball):
     def __init__(self,id=id):
-        screen_wrap.lock.acquire()
+
 
         # purple
         self.max_size_contour = 60
@@ -24,7 +24,7 @@ class Purple_ball(ball.Ball):
 
         wrap.sprite_text.set_text_color(self.name, 218, 71, 255)
 
-        screen_wrap.lock.release()
+
 
     def move_contour(self):
         sp.move_to(self.contour, sp.get_x(self.name), sp.get_y(self.name))

@@ -27,6 +27,4 @@ can.pack(expand=True)
 
 can.create_rectangle(50,150,300,100,fill='lime',width=3,outline='blue',activefill='pink',activeoutline='black')
 
-
-
 win.mainloop()

@@ -1,6 +1,6 @@
 import turtle
 
-turtle.speed(1)
+turtle.speed(0)
 
 
 def line(angle_begin, line1, angle1, line2, angle2, line3):

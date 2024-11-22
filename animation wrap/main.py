@@ -4,7 +4,7 @@ from wrap import actions, sprite, world, sprite_text
 world.create_world(500, 600)
 world.set_back_color(128, 171, 226)
 
-wrap.add_sprite_dir("C:/Users/i'm/PycharmProjects/Worki/semen")
+wrap.add_sprite_dir("/animation wrap")
 hero = wrap.sprite.add("picture", 100, 430, "HeroKnight_Run_0")
 sprite.set_width_proportionally(hero, 300)
 
