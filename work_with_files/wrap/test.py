@@ -9,7 +9,7 @@ long = 900
 wrap.world.create_world(width, long)
 
 #Указываем абсолютный путь к папке с файлами (в основе проекта)
-wrap.add_sprite_dir("C:/Users/i'm/PycharmProjects/Worki/working with files/picture")
+wrap.add_sprite_dir("/work_with_files/wrap/picture")
 
 
 

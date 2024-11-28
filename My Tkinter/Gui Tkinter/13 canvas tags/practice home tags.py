@@ -23,16 +23,16 @@ def select():
 
 
 (Radiobutton(text=red, value=red, variable=selected_color, command=select, font=('Arial', 20)).
- grid(row=1, column=0,sticky='w'))
+ grid(row=1, column=0, sticky='w'))
 (Radiobutton(text=blue, value=blue, variable=selected_color, command=select, font=('Arial', 20)).
- grid(row=2, column=0,sticky='w'))
+ grid(row=2, column=0, sticky='w'))
 (Radiobutton(text=green, value=green, variable=selected_color, command=select, font=('Arial', 20)).
- grid(row=3, column=0,sticky='w'))
+ grid(row=3, column=0, sticky='w'))
 
 (Radiobutton(text=red, value=red, variable=selected_color_roof, command=select, font=('Arial', 20)).
- grid(row=1, column=1,sticky='w'))
+ grid(row=1, column=1, sticky='w'))
 (Radiobutton(text=blue, value=blue, variable=selected_color_roof, command=select, font=('Arial', 20)).
- grid(row=2, column=1,sticky='w'))
+ grid(row=2, column=1, sticky='w'))
 (Radiobutton(text=green, value=green, variable=selected_color_roof, command=select, font=('Arial', 20)).
- grid(row=3, column=1,sticky='w'))
+ grid(row=3, column=1, sticky='w'))
 root.mainloop()

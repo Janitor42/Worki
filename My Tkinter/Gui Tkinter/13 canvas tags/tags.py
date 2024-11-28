@@ -28,6 +28,7 @@ print(first)
 # тегу с помощью метода find_withtag(), в который передается имя тега.
 # по тегу ищем номера(идентификаторы элементов)
 for i in can.find_withtag('one'):
+
     print(i.conjugate())
 
 

@@ -34,6 +34,7 @@ def collide():
 
 
 def on_click(event=None):
+    print(111)
     global click
     click = True
 
