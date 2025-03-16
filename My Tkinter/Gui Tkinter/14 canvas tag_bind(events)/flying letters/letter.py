@@ -1,5 +1,6 @@
 import random as rd
 import string as st
+import time
 
 letters = []
 

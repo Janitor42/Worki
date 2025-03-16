@@ -11,6 +11,13 @@ def create_line(how_many_lines):
 
 
 
-create_line(15)
+
+
+
+
+
+
+
+create_line(10)
 
 turtle.mainloop()

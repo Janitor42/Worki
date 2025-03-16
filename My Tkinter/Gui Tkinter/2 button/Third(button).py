@@ -1,5 +1,6 @@
 import tkinter as tk
-
+import random
+print(random.choice(['1,2,3']))
 #простой print в консоль
 def say_hello():
     print('Hello')

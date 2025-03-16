@@ -6,6 +6,7 @@ win = tk.Tk()
 #Меняем имя окна
 win.title('firs')
 
+
 #Размеры окна
 win.geometry('500x500')
 

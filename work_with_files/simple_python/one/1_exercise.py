@@ -11,7 +11,7 @@
 # hell
 # hello
 
-# То вызов file_n_lines(hello.txt, 3) должен распечатать следующее:
+# То вызов waile_n_lines(hello.txt, 3) должен распечатать следующее:
 #
 # h
 # he

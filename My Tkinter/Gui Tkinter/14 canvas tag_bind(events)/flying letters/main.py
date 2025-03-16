@@ -1,3 +1,5 @@
+import time
+
 import letter
 import time as ti
 import tkinter as tk
@@ -27,5 +29,6 @@ can.bind('<ButtonPress-1>', create_letter)
 while True:
 
     letter.move_all(can=can)
+    time.sleep(0.0001)
     win.update()
 

@@ -1,0 +1,10 @@
+{
+  "name": "Alice",
+  "age": 25,
+  "isStudent": true,
+  "courses": ["Physics", "Chemistry"],
+  "address": {
+    "city": "Los Angeles",
+    "zipcode": "90001"
+  }
+}

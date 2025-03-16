@@ -1,4 +1,7 @@
 
+
+
+
 file=open('files/who_is_this.txt','a+',encoding='utf-8')
 file.seek(0)
 print(file.read())

@@ -44,6 +44,8 @@ tk.Button(win, text='insert', command=insert_entry).grid(row=1, column=4, stick=
 # вставлять какие то данные в существующую позицию
 
 
+
+
 win.grid_columnconfigure(0, minsize=100)
 win.grid_columnconfigure(1, minsize=100)
 

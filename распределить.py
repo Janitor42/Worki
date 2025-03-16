@@ -378,3 +378,9 @@
 # s=new+s
 # print(s)
 
+
+a=[' 2','','z']
+
+if '' in a:
+    print(1)
+

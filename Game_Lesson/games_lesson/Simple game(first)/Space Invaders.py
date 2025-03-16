@@ -102,6 +102,7 @@ def move():
         else:
             sprite.set_costume_prev(enemy_list[i])
 
+
 """Работа с пулей"""
 @wrap.always(7)
 def move_bullet():

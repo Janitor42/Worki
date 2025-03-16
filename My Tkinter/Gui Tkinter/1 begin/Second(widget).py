@@ -1,30 +1,24 @@
 import tkinter as tk
-
+from PIL import Image, ImageTk
 
 win = tk.Tk()
-
-win.title('firs')
-
+win.title('Image Resize Example')
 win.geometry('500x500')
 win.config(background='black')
 
-#вызов класса Label который показывает на окне
-label_1=tk.Label(win,text='''Hello''',
-                 background='white',#задник
-                 foreground='green',#цвет текста
-                 font=('Arial',15,'bold'),#параметры текста
-                 padx=20,pady=40,#отступ х отступ у
-                 width=10,height=1,#ширина и высота в знаках
-                 anchor='sw',#ценровка текста в label (север юг запад восток)
-                 #центровка происходит только тогда когда заданы width и или height
-                 relief=tk.RAISED,#отображение границ label
-                 bd=10,#ширина границы relief
-                 justify=tk.CENTER) #Прижатие теста к стороне работает в 2 button и более строчки
+# Открываем изображение
+pil_img = Image.open("image.png")
 
-#расположение на экране(отрисовка)
-label_1.pack()
+# Изменяем размер изображения (например, 200x200)
+resized_img = pil_img.resize((200, 200))
 
+# Преобразуем в формат, совместимый с Tkinter
+img = ImageTk.PhotoImage(resized_img)
 
+# Создаем и размещаем Label с изображением
+label = tk.Label(win, image=img)
+label.place(x=100, y=100)
 
-#отображение окна
 win.mainloop()
+
+
