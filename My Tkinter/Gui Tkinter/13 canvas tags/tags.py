@@ -12,7 +12,7 @@ can.pack(expand=True)
 # tags=['создание тега в момент создания элемента']]
 line = can.create_line(0, 100, 200, 100, width=10, fill='orange', tags=['one','just line'])
 first = can.gettags(line)  # получение тега - через канвас
-print(first)
+# print(first)
 
 line2 = can.create_line(0, 150, 200, 150, width=10, fill='blue')
 can.addtag('one', 'withtag', line2)
@@ -21,15 +21,18 @@ can.addtag('one', 'withtag', line2)
 # Третий параметр - идентификатор элемента, для которого добавляется тег:
 
 first = can.gettags(line2)  # получение тега - через канвас
-print(first)
+# print(first)
 
 
 # так же можно получить идентификаторы элементов по определенному
 # тегу с помощью метода find_withtag(), в который передается имя тега.
 # по тегу ищем номера(идентификаторы элементов)
-for i in can.find_withtag('one'):
 
-    print(i.conjugate())
+
+for i in can.find_withtag('one'):
+    print(i)
+
+
 
 
 #удаление tag через dtags()
@@ -44,3 +47,5 @@ can.itemconfig('one',fill='pink',width=5)#поменял всем у кого ta
 
 
 win.mainloop()
+
+

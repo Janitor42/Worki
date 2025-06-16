@@ -24,8 +24,9 @@ def rd_place():
 
 def collide():
     global x_dot, y_dot
+
     if (x_bt + 10 in [i for i in range(x_dot - 10, x_dot + size + 10)]
-            and y_bt + 10 in [i for i in range(y_dot - 10,y_dot + size + 10)]):
+            and y_bt + 10 in [i for i in range(y_dot - 10, y_dot + size + 10)]):
         button.place(x=x_dot, y=y_dot)
         count.set(int(count.get()) + 1)
         x_dot = rd_place()
@@ -34,9 +35,10 @@ def collide():
 
 
 def on_click(event=None):
-    print(111)
     global click
     click = True
+
+
 
 
 def out_click(event=None):
@@ -45,11 +47,14 @@ def out_click(event=None):
     collide()
 
 
+
+
 def move_to_me(event):
     global x_bt, y_bt
     if click:
         x_bt = x_bt + event.x - 10
         y_bt = y_bt + event.y - 10
+
         button.place(x=x_bt, y=y_bt)
 
 
@@ -62,8 +67,12 @@ label3.place(x=450, y=50)
 button = tk.Button(win, text='go', font=size)
 button.place(x=x_bt, y=y_bt)
 
+
+
+
+
 button.bind('<ButtonPress>', on_click)
 button.bind('<ButtonRelease>', out_click)
-win.bind('<Motion>', move_to_me)
+button.bind('<Motion>', move_to_me)
 
 win.mainloop()

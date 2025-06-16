@@ -26,8 +26,6 @@
 # print(century(0))
 
 
-
-
 # Сможете ли вы найти иголку в стоге сена?
 #
 # Напишите функцию findNeedle(), которая принимает array полный мусор, но содержит один"needle"
@@ -47,8 +45,6 @@
 #
 #
 # print(find_needle(['3 method grid', '123124234', None, 'needle', 'world', 'hay', 2 button, '3 method grid', True, False]))
-
-
 
 
 # Волки были вновь завезены в Великобританию. Вы разводите овец, и теперь вас преследуют волки, которые притворяются овцами. К счастью, вы хорошо их замечаете.
@@ -83,8 +79,6 @@
 #
 #
 # print(warn_the_sheep(['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf']))
-
-
 
 
 # Напишите функцию, объединяющую два отсортированных массива в один.
@@ -271,7 +265,6 @@
 # print(world('Hello, world!'))
 
 
-
 # Дана строка. Если в этой строке буква f встречается только один раз, выведите её индекс.
 # Если она встречается два и более раз, выведите индекс её первого и последнего появления. Если буква f в данной строке не встречается, ничего не выводите.
 #
@@ -333,11 +326,6 @@
 # print(world('coffee'))
 
 
-
-
-
-
-
 # s=[5,0,4,5,0,0,1 begin,2 button]
 # for i in range(len(s)-1 begin, -1 begin, -1 begin):
 #     if s[i] == 0:
@@ -352,8 +340,6 @@
 #         s.pop(i)
 #         s.append(0)
 # print(*s)
-
-
 
 
 # Напишите функцию, которая переставляет все прописные буквы в начало слова — строки.
@@ -379,8 +365,28 @@
 # print(s)
 
 
-a=[' 2','','z']
+import tkinter as tk
 
-if '' in a:
-    print(1)
+w = tk.Tk()
+w.geometry('500x500')
+x = 20
+all = {}
+for i in range(5):
+    label = tk.Label(text='None')
+    label.place(x=x, y=70)
 
+    button = tk.Button(text=f'go{i}')
+    button.place(x=x, y=100)
+    x += 50
+
+
+    def run(i=i):#аргументы с значениями по умолчанию
+        all[i][0].config(text='good')
+        all[i][1].config(background='red')
+
+
+    button.config(command=run)
+
+    all[i] = [label, button]
+
+w.mainloop()

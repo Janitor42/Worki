@@ -36,3 +36,23 @@ can.itemconfig('z',fill=rd.choice(color_z))
 
 
 tk.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

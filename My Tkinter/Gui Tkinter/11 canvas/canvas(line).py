@@ -37,7 +37,7 @@ can.create_line(0,0,100,100)
 # splinesteps: управляет сглаживанием изогнутых линий
 
 # can.create_line(0,300,300,0,arrow='both',arrowshape=(10,20,10))
-can.create_line(0,300,300,0,capstyle="projecting",smooth='true')
+a=can.create_line(0,300,300,0,capstyle="projecting",smooth='true')
 
 # Параметры отрисовки
 # Методы отрисовки имеют ряд параметров, которые позволяют настроить стилизацию фигур. Некоторые из этих параметров:

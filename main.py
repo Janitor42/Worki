@@ -36,7 +36,6 @@ import string
 # print(all)
 
 
-
 # class Car:
 #     a=0
 #     def __init__(self):
@@ -60,34 +59,6 @@ import string
 
 # a=['w','w','w']
 
-
-
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 # import random
 # color = None
 # number = None
@@ -141,5 +112,12 @@ import string
 #     result = "you " + score
 #     print(result + " you have " + str(balance) + " left")
 #     want_to_play = input("do you want to keep playing the roulette? ")
+
+
+# a=('no',)
+# a2=list(a)
+# a3=a[0]
+# print(a3)
+
 
 

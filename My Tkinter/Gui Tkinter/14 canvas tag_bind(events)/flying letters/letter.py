@@ -40,3 +40,5 @@ def move_all(can):
         i.step()
         i.side()
         can.move(i.name, i.speed_x, i.speed_y)
+        a=can.coords(i.name)
+        print(a)

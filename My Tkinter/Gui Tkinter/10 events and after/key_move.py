@@ -32,6 +32,7 @@ def new_dot():
     dont_move=False
 
 
+
 x_dot=rd_place()
 y_dot=rd_place()
 
@@ -67,21 +68,24 @@ def move_right(Event=None):
 
 def fin():
     global dont_move,label3
+    print(button.winfo_rootx())
     if x==x_dot and y==y_dot:
         label3 = tk.Label(win, textvariable=f'{count}', font=('Arial',15), background='red',)
         label3.place(x=450, y=50)
         dont_move=True
         new_dot()
+
         # dot.after(1000,new_dot)
 
-label=tk.Label(win,text='touch dot',font=size)
-label.place(x=130,y=10)
+
 
 dot=tk.Label(win,text='     ',font=size,background='red')
 dot.place(x=x_dot,y=y_dot)
 
+
 button=tk.Button(win,text='go',font=size)
 button.place(x=30,y=30)
+
 
 
 win.bind("<Down>",move_down)
@@ -90,3 +94,29 @@ win.bind("<Left>",move_left)
 win.bind("<Right>",move_right)
 
 win.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

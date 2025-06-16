@@ -24,3 +24,14 @@ def create_file_with_numbers(count=count):
 
 
 create_file_with_numbers(count)
+
+
+
+#счетает кол-во букв в файле (обходя \n
+# file = open(f'files/from_exercise_2_6.txt', 'r')
+# for i in file:
+#     for q in i:
+#         if q.isalnum():
+#             print(q)
+
+

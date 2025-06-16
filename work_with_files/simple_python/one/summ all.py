@@ -20,3 +20,41 @@
 # то результатом было бы:
 #
 # 680
+
+
+file = open('files/count_values.txt', 'r', encoding='utf-8')
+
+all = []
+for i in file:
+    a = i.split()
+    all += a
+
+print(all)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
