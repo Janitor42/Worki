@@ -5,7 +5,7 @@ import wrap
 
 
 
-#'''1 begin'''
+#'''1 readme'''
 # # #простое использование лямбды функции (без параметром)
 # def simple():
 #     return 'fight'
@@ -45,7 +45,7 @@ import wrap
 # simple2=lambda x:'+' if x>0 else '-'
 # print(simple2(4))
 #
-# '''3 method grid.1 begin'''
+# '''3 method grid.1 readme'''
 # #Дополнительный пример (параметр заводим ручками с клавиатуры)
 #
 # simple2=lambda x=int(input('use your count')):'+' if x>0 else '-'

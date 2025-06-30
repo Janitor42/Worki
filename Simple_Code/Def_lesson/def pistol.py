@@ -18,7 +18,7 @@ reload = True
 
 def shoot(q):
     global reload
-    if q == '1 begin' and reload == True:
+    if q == '1 readne' and reload == True:
         print('П ы щ ь ')
         reload = False
     else:
@@ -36,7 +36,7 @@ def reloading(q):
 
 
 while True:
-    shoot(input('стрелять на 1 begin '))
+    shoot(input('стрелять на 1 readme '))
     reloading(input('перезарядка на 2 button '))
 
 

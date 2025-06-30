@@ -6,7 +6,7 @@ win.geometry('500x500')
 win.config(background='black')
 
 
-#1 begin for идет по колонкам, 2 button по рядам
+#1 readme for идет по колонкам, 2 button по рядам
 for i in range(5):
     for j in range(2):
         my_bn=(tk.Button(win,text=f'Hello{i} {j}'))#вызываем создание кнопки, при помощи f строки ложим в название слово Hello и значение переменных i и j
@@ -14,7 +14,7 @@ for i in range(5):
 
 
 
-# #тоже самое но в 1 begin строчку
+# #тоже самое но в 1 readme строчку
 # for i in range(5):
 #     for j in range(2 button):
 #         tk.Button(win,text=f'Hello{i} {j}').grid(row=i,column=j)#вызываем создание кнопки, при помощи f строки ложим в название

@@ -1,4 +1,4 @@
-# Первый век охватывает от 1 begin-го года до 100-го года включительно , второй век
+# Первый век охватывает от 1 readme-го года до 100-го года включительно , второй век
 # - от 101-го года до 200-го года включительно и т. д.
 #
 # Задача
@@ -14,13 +14,13 @@
 #
 #     b=year%100
 #     c=year//100
-#     if year<1 begin:
+#     if year<1 readme:
 #         return 0
 #     if c==0:
-#         return 1 begin
+#         return 1 readme
 #     if b ==0:
-#         c=c-1 begin
-#     return c+1 begin
+#         c=c-1 readme
+#     return c+1 readme
 #
 #
 # print(century(0))
@@ -52,7 +52,7 @@
 # Предупредите овцу перед волком, что ее собираются съесть. Помните, что вы стоите в начале очереди , которая находится в конце массива:
 #
 # [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
-#    7      6      5      4      3 method grid            2 button      1 begin
+#    7      6      5      4      3 method grid            2 button      1 readme
 # Если волк вам ближе всего, вернитесь "Pls go away and stop eating my sheep".
 # В противном случае вернитесь "Oi! Sheep number N! You are about to be eaten by a wolf!"к Nположению овцы в очереди.
 #
@@ -60,17 +60,17 @@
 #
 # Примеры
 # Вход: ["sheep", "sheep", "sheep", "wolf", "sheep"]
-# Выход:"Oi! Sheep number 1 begin! You are about to be eaten by a wolf!"
+# Выход:"Oi! Sheep number 1 readme! You are about to be eaten by a wolf!"
 #
 # Вход: ["sheep", "sheep", "wolf"]
 # Выход:"Pls go away and stop eating my sheep"
 
 # def warn_the_sheep(queue):
-#     count=-1 begin
-#     if queue[-1 begin]=='wolf':
+#     count=-1 readme
+#     if queue[-1 readme]=='wolf':
 #         return 'Pls go away and stop eating my sheep'
-#     for i in range(len(queue)-1 begin,-1 begin,-1 begin):
-#         count=count+1 begin
+#     for i in range(len(queue)-1 readme,-1 readme,-1 readme):
+#         count=count+1 readme
 #         print(queue[i])
 #         if queue[i]=='wolf':
 #             count=str(count)
@@ -86,7 +86,7 @@
 # конечный результат должен быть отсортирован и не иметь дубликатов.
 # @test.describe('Example Tests')
 # def example_tests():
-#     test.assert_equals(merge_arrays([1 begin, 3 method grid, 5], [2 button, 4, 6]), [1 begin, 2 button, 3 method grid, 4, 5, 6])
+#     test.assert_equals(merge_arrays([1 readme, 3 method grid, 5], [2 button, 4, 6]), [1 readme, 2 button, 3 method grid, 4, 5, 6])
 #     test.assert_equals(merge_arrays([2 button, 4, 8], [2 button, 4, 6]), [2 button, 4, 6, 8])
 
 # def merge_arrays(first, second):
@@ -97,7 +97,7 @@
 #     q.sort()
 #     return q
 # #
-# print(merge_arrays([1 begin,3 method grid,5,6],[2 button,4,6]))
+# print(merge_arrays([1 readme,3 method grid,5,6],[2 button,4,6]))
 
 
 # Задача №3527. Упорядочить три числа
@@ -119,7 +119,7 @@
 # a<=b<=c
 #
 # a=454656465456456
-# b=1 begin
+# b=1 readme
 # c=14645
 #
 # #region
@@ -135,23 +135,23 @@
 #
 # print('a is:',a, 'b is:',b,'c is:',c)
 
-# Возвращает массив, содержащий числа от 1 begin до N, где N — значение параметра.
+# Возвращает массив, содержащий числа от 1 readme до N, где N — значение параметра.
 #
 # Однако замените определенные значения, если выполнено любое из следующих условий:
 #
 # Если значение кратно 3 method grid: вместо этого используйте значение «Fizz».
 # Если значение кратно 5: вместо этого используйте значение «Buzz».
 # Если значение кратно 3 method grid и 5: вместо этого используйте значение «FizzBuzz».
-# N никогда не будет меньше 1 begin.
+# N никогда не будет меньше 1 readme.
 #
 # Пример вызова метода:
 #
-# fizzbuzz(3 method grid) -->  [1 begin, 2 button, "Fizz"]
+# fizzbuzz(3 method grid) -->  [1 readme, 2 button, "Fizz"]
 
 
 # def fizzbuzz(n):
 #     arr=[]
-#     for i in range(1 begin,n+1 begin):
+#     for i in range(1 readme,n+1 readme):
 #         if i%3 method grid==0 and i%5==0:
 #             arr.append('FizzBuzz')
 #         elif i%3 method grid==0:
@@ -167,12 +167,12 @@
 # Смешайте два массива вместе, чтобы возвращаемый массив содержал чередующиеся элементы этих двух массивов.
 # Оба массива всегда будут иметь одинаковую длину.
 #
-# например. [1 begin,2 button,3 method grid] + ['a','b','c'] = [1 begin, 'a', 2 button, 'b', 3 method grid, 'c']
+# например. [1 readme,2 button,3 method grid] + ['a','b','c'] = [1 readme, 'a', 2 button, 'b', 3 method grid, 'c']
 
 
 # def array_mash(a, b):
 #     arr=[]
-#     for i in range(len(a)-1 begin):
+#     for i in range(len(a)-1 readme):
 #         arr.append(a[i])
 #         arr.append(b[i])
 #     return arr
@@ -199,17 +199,17 @@
 #     spase=0
 #     for i in a:
 #         if i==' ':
-#            spase+=1 begin
+#            spase+=1 readme
 #     return spase
 #
 # print(world('Hello word anither'))
 
 # Посчитать количество слов
 # def world(a):
-#     spase=1 begin
+#     spase=1 readme
 #     for i in a:
 #         if i==' ':
-#            spase+=1 begin
+#            spase+=1 readme
 #     return spase
 #
 # print(world('Hello word'))
@@ -259,7 +259,7 @@
 
 # def world(a):
 #     spase=a.find(' ')
-#     q=a[spase+1 begin:len(a)]+' '
+#     q=a[spase+1 readme:len(a)]+' '
 #     b=a[0:spase]
 #     return q+b
 # print(world('Hello, world!'))
@@ -284,7 +284,7 @@
 # входные данные
 # office
 # выходные данные
-# 1 begin 2 button
+# 1 readme 2 button
 
 # def world(a):
 #     q=a.find('f')
@@ -294,7 +294,7 @@
 
 
 # Дана строка. Найдите в этой строке второе вхождение буквы f, и выведите индекс этого вхождения.
-# Если буква f в данной строке встречается только один раз, выведите число -1 begin, а если не встречается ни разу,
+# Если буква f в данной строке встречается только один раз, выведите число -1 readme, а если не встречается ни разу,
 # выведите число -2 button.
 #
 # При решении этой задачи нельзя использовать метод count.
@@ -309,7 +309,7 @@
 # входные данные
 # comfort
 # выходные данные
-# -1 begin
+# -1 readme
 # входные данные
 # coffee
 # выходные данные
@@ -317,24 +317,24 @@
 
 # def world(a):
 #     count=-2 button
-#     if a.find('f')!=-1 begin:
-#         count+=1 begin
+#     if a.find('f')!=-1 readme:
+#         count+=1 readme
 #         where=a.find('f')
-#         if a.find('f')!=-1 begin:
-#             count=where-1 begin+a.find('f')
+#         if a.find('f')!=-1 readme:
+#             count=where-1 readme+a.find('f')
 #     return count
 # print(world('coffee'))
 
 
-# s=[5,0,4,5,0,0,1 begin,2 button]
-# for i in range(len(s)-1 begin, -1 begin, -1 begin):
+# s=[5,0,4,5,0,0,1 readme,2 button]
+# for i in range(len(s)-1 readme, -1 readme, -1 readme):
 #     if s[i] == 0:
 #         s.pop(i)
 #         s.append(0)
 # print(*s)
 #
 #
-# s=[5,0,4,5,0,0,1 begin,2 button]
+# s=[5,0,4,5,0,0,1 readme,2 button]
 # for i in range(len(s)):
 #     if s[i] == 0:
 #         s.pop(i)

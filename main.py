@@ -1,123 +1,50 @@
-# import asyncio
+# import time
+# import tkinter as tk
 #
-# async def my_coroutine():
-#    print("Корутина начала выполнение")
-#    await asyncio.sleep(2)  # Асинхронная задержка на 2 секунды
-#    print("Корутина завершила выполнение")
+# win = tk.Tk()
+# win.geometry('1200x800+100+200')
+# win.config(background='black')
 #
+# can = tk.Canvas(width=1200, height=800, bg='black')
+# can.place(x=0, y=0)
+# coordsh = [725, 275, 725, 525]
+# coordsh2 = [725, 275, 725, 525]
+# base = can.create_oval(600, 400, 850, 650, fill='white')
+# hour_hand = can.create_line(*coordsh, fill='black', width=8)
 #
+# minute_hand = can.create_line(coordsh2,fill='red', width=8)
+# # second_hand = can.create_line()
 #
-# asyncio.run(my_coroutine())
+# # a = [1, 2, 3, 4]
+# # print(a)                - Памятка
+# # print(*a)
 #
-# a = 10
-# b = "hello"
+# # while True:
 #
-# print(f"world, {a} say\t {b} *")
-
-import string
-
-# a = '123 jhjk bhjip456qwerty 1x2y3 4 5 6 sfsd 0 dfgfd 10abc20de30pop5 5 5 5'
-#
-# val = ''
-# all = []
-# count = 0
-# for i in a:
-#     if i.isdigit():
-#         val += i
-#         if len(a) == count + 1:
-#             all.append(val)
-#             break
-#     if not i.isdigit():
-#         if val != '':
-#             all.append(val)
-#         val = ''
-#     count += 1
-#
-# print(all)
-
-
-# class Car:
-#     a=0
-#     def __init__(self):
-#         self.x=10
-#         self.y=10
-#
-# w=Car()
-#
-# print(w.x)
+# extra = [[16.7, 16.7], [-16.7, 16.7], [-16.7, -16.7], [16.7, -16.7]]
 #
 #
+# def action():
+#     for i in extra:
+#         piece(x=i[0], y=i[1], hand=hour_hand, wd=8)
 #
-# w=Car()
 #
-# print(w.a)
-# w.a=10
-# print(w.a)
-# w.c=10
-# print(w.c)
-
-
-# a=['w','w','w']
-
-# import random
-# color = None
-# number = None
-# size = None
-# def random_number():
-#     global color,size,number
-#     number = random.randint(1,36)
-#     if number % 2 == 0:
-#         color = "black"
-#     else:
-#         color = "red"
-#     if number <= 18:
-#         size = "small"
-#     else:
-#         size = "big"
-#     print(str(number) + color + size)
-#     return number,size,color
+# def piece(x, y, hand, wd):
+#     for i in range(15):
+#         coordsh2[0], coordsh2[1], coordsh2[2], coordsh2[3] = coordsh2[0] + x, coordsh2[1] + y, coordsh2[2], coordsh2[3]
+#         time.sleep(0.1)
+#         can.delete(hand)
+#         hand = can.create_line(*coordsh2, fill='black', width=wd)
+#         if coordsh == coordsh2:
+#             print(1)
 #
-# balance = 100
-# want_to_play = input("do you want to play the roulette? ")
-# while want_to_play == "yes" and balance > 0:
-#     money_spent = int(input("how much money do you want to use? "))
-#     if money_spent > balance:
-#         print("you dont have enough money")
-#         break
-#     balance = balance - money_spent
-#     type_of_play = input("choose the type of play: ")
-#     if type_of_play == "color":
-#         color_play = input("choose the color: ")
-#         random_number()
-#         if color == color_play:
-#             score = "win"
-#             balance = balance + 2*money_spent
-#         else:
-#             score = "lose"
-#     if type_of_play == "number":
-#         number_play = input("choose the number: ")
-#         random_number()
-#         if number == number_play:
-#             score = "win"
-#             balance = balance + 6 * money_spent
-#         else:
-#             score = "lose"
-#     if type_of_play == "size":
-#         big_small = input("choose big or small: ")
-#         if size == big_small:
-#             score = "win"
-#             balance = balance + 2 * money_spent
-#         else:
-#             score = "lose"
-#     result = "you " + score
-#     print(result + " you have " + str(balance) + " left")
-#     want_to_play = input("do you want to keep playing the roulette? ")
-
-
-# a=('no',)
-# a2=list(a)
-# a3=a[0]
-# print(a3)
+#         win.update()
+#     can.delete(hand)
+#
+#
+# action()
+# action()
+# win.mainloop()
 
 
 

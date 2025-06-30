@@ -15,9 +15,9 @@
 #3 method grid
 # a=0
 # b=height
-# for i in range(1 begin,height+1 begin,1 begin):
-#    a+=1 begin
-#    b-=1 begin
+# for i in range(1 readme,height+1 readme,1 readme):
+#    a+=1 readme
+#    b-=1 readme
 #    print(" "*b,"#"*a)
 # a=height
 # b=0
@@ -25,8 +25,8 @@
 # print()ds
 #
 # #4
-# for i in range(1 begin,height+1 begin,1 begin):
+# for i in range(1 readme,height+1 readme,1 readme):
 #    print(" "*b,"#"*a)
-#    a-=1 begin
-#    b+=1 begin
+#    a-=1 readme
+#    b+=1 readme
 #
