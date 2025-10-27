@@ -1,0 +1,282 @@
+[
+    {
+        "gender": "female",
+        "name": {
+            "title": "Ms",
+            "first": "Rebecca",
+            "last": "Knauer"
+        },
+        "location": {
+            "street": {
+                "number": 9981,
+                "name": "Ringstraße"
+            },
+            "city": "Crailsheim",
+            "state": "Thüringen",
+            "country": "Germany",
+            "postcode": 64092,
+            "coordinates": {
+                "latitude": "-31.6476",
+                "longitude": "43.5487"
+            },
+            "timezone": {
+                "offset": "+6:00",
+                "description": "Almaty, Dhaka, Colombo"
+            }
+        },
+        "email": "rebecca.knauer@example.com",
+        "login": {
+            "uuid": "a693c923-ec7b-4cfc-af9e-8f74ff1ee46f",
+            "username": "tinyelephant455",
+            "password": "tacobell",
+            "salt": "6F9Dr98g",
+            "md5": "bfdfe2041d7d52e4d24edcaa31a3f72a",
+            "sha1": "a9734f83c587bf15de491a2d168915cdaa4d7409",
+            "sha256": "42699fc79e63d0023bed8f321db359c741825f32b6a62d9d38647f38d74ddd23"
+        },
+        "dob": {
+            "date": "1998-10-30T18:27:01.755Z",
+            "age": 26
+        },
+        "registered": {
+            "date": "2020-11-08T23:47:18.256Z",
+            "age": 4
+        },
+        "phone": "0983-9487536",
+        "cell": "0177-5826137",
+        "id": {
+            "name": "SVNR",
+            "value": "60 301098 K 810"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/21.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/21.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/21.jpg"
+        },
+        "nat": "DE"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Mrs",
+            "first": "Audete",
+            "last": "Araújo"
+        },
+        "location": {
+            "street": {
+                "number": 5557,
+                "name": "Rua Duque de Caxias "
+            },
+            "city": "Trindade",
+            "state": "Amazonas",
+            "country": "Brazil",
+            "postcode": 14710,
+            "coordinates": {
+                "latitude": "-3.0760",
+                "longitude": "31.2781"
+            },
+            "timezone": {
+                "offset": "-10:00",
+                "description": "Hawaii"
+            }
+        },
+        "email": "audete.araujo@example.com",
+        "login": {
+            "uuid": "439c121e-7294-4378-b7d8-61ec2ad308c9",
+            "username": "whitelion403",
+            "password": "bradley",
+            "salt": "t4Br71at",
+            "md5": "ff9778bcf49339f6a3c99428a770ae79",
+            "sha1": "e9b1fb3b83bb6b2d7d035ced13452949752bdf6e",
+            "sha256": "ef620f75e5ffaef184d52ca9d5d0a18f796b98943023cb632f7ea1aa57fe32fb"
+        },
+        "dob": {
+            "date": "1995-11-06T17:59:21.302Z",
+            "age": 29
+        },
+        "registered": {
+            "date": "2013-01-05T03:55:12.054Z",
+            "age": 12
+        },
+        "phone": "(43) 3961-7277",
+        "cell": "(25) 4055-6436",
+        "id": {
+            "name": "CPF",
+            "value": "036.927.522-64"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/26.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/26.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/26.jpg"
+        },
+        "nat": "BR"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Ms",
+            "first": "Hermelinda",
+            "last": "Leyva"
+        },
+        "location": {
+            "street": {
+                "number": 9657,
+                "name": "Prolongación Sur Jimínez"
+            },
+            "city": "Guayameo",
+            "state": "Queretaro",
+            "country": "Mexico",
+            "postcode": 97478,
+            "coordinates": {
+                "latitude": "-61.6358",
+                "longitude": "40.4747"
+            },
+            "timezone": {
+                "offset": "+5:30",
+                "description": "Bombay, Calcutta, Madras, New Delhi"
+            }
+        },
+        "email": "hermelinda.leyva@example.com",
+        "login": {
+            "uuid": "1e105185-e205-4e74-bd05-2f85e84755fb",
+            "username": "silverrabbit931",
+            "password": "gators",
+            "salt": "JUscKKdP",
+            "md5": "3aec72f227dd1dd8f2fccdbfb7ec351b",
+            "sha1": "3bc8fed20842b5f8e17ad3c9bc363336466c67ff",
+            "sha256": "34caa3b90001057fd74f79bc3404d072478a395760762306fdd9e370665727ce"
+        },
+        "dob": {
+            "date": "1997-12-05T05:41:50.727Z",
+            "age": 27
+        },
+        "registered": {
+            "date": "2017-03-08T05:21:50.166Z",
+            "age": 8
+        },
+        "phone": "(693) 789 3928",
+        "cell": "(639) 473 1039",
+        "id": {
+            "name": "NSS",
+            "value": "66 49 34 2232 3"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/72.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/72.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/72.jpg"
+        },
+        "nat": "MX"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Monsieur",
+            "first": "Jon",
+            "last": "Philippe"
+        },
+        "location": {
+            "street": {
+                "number": 3685,
+                "name": "Rue Gasparin"
+            },
+            "city": "Basadingen-Schlattingen",
+            "state": "Basel-Landschaft",
+            "country": "Switzerland",
+            "postcode": 7286,
+            "coordinates": {
+                "latitude": "-38.8004",
+                "longitude": "114.4924"
+            },
+            "timezone": {
+                "offset": "-4:00",
+                "description": "Atlantic Time (Canada), Caracas, La Paz"
+            }
+        },
+        "email": "jon.philippe@example.com",
+        "login": {
+            "uuid": "2c961234-c632-408c-85e0-2c990c0548dc",
+            "username": "smalltiger840",
+            "password": "starbuck",
+            "salt": "MLaWcwsH",
+            "md5": "25cb131fc1d4e16a3bd3b565dc710f52",
+            "sha1": "ad42b493552788827a84c71f11935a595b146f8a",
+            "sha256": "d0c999b2e943468d7abc41088d650fb0780440c6270ebe0a7324cecf3d786d41"
+        },
+        "dob": {
+            "date": "1997-09-29T21:52:33.618Z",
+            "age": 27
+        },
+        "registered": {
+            "date": "2005-10-21T11:41:31.615Z",
+            "age": 19
+        },
+        "phone": "077 230 20 25",
+        "cell": "079 384 11 46",
+        "id": {
+            "name": "AVS",
+            "value": "756.8671.8866.27"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/34.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/34.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/34.jpg"
+        },
+        "nat": "CH"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Miss",
+            "first": "Patricia",
+            "last": "Collazo"
+        },
+        "location": {
+            "street": {
+                "number": 5822,
+                "name": "Calzada Norte Madrid"
+            },
+            "city": "Atlatlahucán",
+            "state": "Campeche",
+            "country": "Mexico",
+            "postcode": 22332,
+            "coordinates": {
+                "latitude": "70.6352",
+                "longitude": "116.0532"
+            },
+            "timezone": {
+                "offset": "+5:45",
+                "description": "Kathmandu"
+            }
+        },
+        "email": "patricia.collazo@example.com",
+        "login": {
+            "uuid": "e25b9460-4149-4f5c-b217-adab2dd9a4ba",
+            "username": "brownmeercat404",
+            "password": "jolene",
+            "salt": "cg3msp3C",
+            "md5": "f33060b403cbc445efb45de7b66471b9",
+            "sha1": "6c3c1938a8865722759b7b9263a9a7a7a0d0c358",
+            "sha256": "95eab72597c178a5dc73c9fb90d4fc21e98dd17e202a3b3f1ad45ad44dfd6d6a"
+        },
+        "dob": {
+            "date": "2000-12-18T00:07:37.768Z",
+            "age": 24
+        },
+        "registered": {
+            "date": "2014-10-21T16:16:54.231Z",
+            "age": 10
+        },
+        "phone": "(697) 506 5377",
+        "cell": "(616) 887 1937",
+        "id": {
+            "name": "NSS",
+            "value": "46 68 17 5997 7"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/38.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/38.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/38.jpg"
+        },
+        "nat": "MX"
+    }
+]
