@@ -45,6 +45,3 @@
 # action()
 # action()
 # win.mainloop()
-
-
-
