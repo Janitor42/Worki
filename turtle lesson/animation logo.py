@@ -55,13 +55,17 @@ def square_red():
 
 
 
+
+
+
+
 while True:
     turtle.clear()
     square_blue()
     square_red()
     screen.update()
     turtle.right(1)
-    time.sleep(0.00005)
+    time.sleep(0.1)
 
 
 

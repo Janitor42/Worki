@@ -37,3 +37,16 @@ file=open('files/value_starts','r')
 print(f'меня запускали {len(file.read())} раз')
 file.close()
 #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+

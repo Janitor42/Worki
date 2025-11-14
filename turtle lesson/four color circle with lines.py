@@ -22,9 +22,6 @@ def create_lines():
 
 
 
-
-
-
 create_circle('red',60,90)
 create_lines()
 

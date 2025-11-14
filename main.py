@@ -45,3 +45,48 @@
 # action()
 # action()
 # win.mainloop()
+
+#
+# import tkinter as tk
+#
+#
+# def create_scrollable_window():
+#     root = tk.Tk()
+#     root.title("Окно с прокруткой")
+#     root.geometry("400x300")
+#
+#     # Главный фрейм
+#     main_frame = tk.Frame(root)
+#     main_frame.pack(fill=tk.BOTH, expand=1)
+#
+#     # Canvas для прокрутки
+#     my_canvas = tk.Canvas(main_frame)
+#     my_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
+#
+#     # Scrollbar
+#     my_scrollbar = tk.Scrollbar(main_frame, orient=tk.VERTICAL, command=my_canvas.yview)
+#     my_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+#
+#     # Настройка canvas
+#     my_canvas.configure(yscrollcommand=my_scrollbar.set)
+#     my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion=my_canvas.bbox("all")))
+#
+#     # Фрейм для контента
+#     content_frame = tk.Frame(my_canvas)
+#     my_canvas.create_window((0, 0), window=content_frame, anchor="nw")
+#
+#     # Добавляем много элементов
+#     for i in range(50):
+#         tk.Label(content_frame, text=f"Элемент {i + 1}", font=("Arial", 12)).pack(pady=5)
+#
+#     return root
+#
+#
+# root = create_scrollable_window()
+# root.mainloop()
+
+
+
+a=('23','111sfda','egsd')
+
+print(a[2])

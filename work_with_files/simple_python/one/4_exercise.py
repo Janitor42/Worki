@@ -22,7 +22,8 @@ for row in file:
     a.append(q)
 file.close()
 
-print(two,three)
+
+
 #
 # file = open('files/numbers.txt','w')
 # for i in a:

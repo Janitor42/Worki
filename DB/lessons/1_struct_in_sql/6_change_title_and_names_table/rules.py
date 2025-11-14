@@ -33,7 +33,7 @@ with sqlite3.connect('db_change_titles_and_tables.db') as db:
     query = f"""ALTER TABLE Users ADD COLUMN email TEXT NOT NULL"""
     cursor.executescript(query)
     db.commit()
-#Добавим в таблицу Users новый столбец emai
+#Добавим в таблицу Users новый столбец email
 # В данном случае столбец email имеет тип TEXT и для него определено ограничение NOT NULL.
 
 
@@ -45,9 +45,9 @@ with sqlite3.connect('db_change_titles_and_tables.db') as db:
 # Переименуем столбец email в login
 
 
-with sqlite3.connect('db_change_titles_and_tables.db') as db:
-    cursor = db.cursor()
-    query = f"""ALTER TABLE Users DROP COLUMN login"""
-    cursor.executescript(query)
-    db.commit()
+# with sqlite3.connect('db_change_titles_and_tables.db') as db:
+#     cursor = db.cursor()
+#     query = f"""ALTER TABLE Users DROP COLUMN login"""
+#     cursor.executescript(query)
+#     db.commit()
 #удалить столбец (нужна свежая версия питона)

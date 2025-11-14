@@ -13,5 +13,4 @@ file=open('files/json_file.txt','r')
 allll=json.load(file)
 print(allll)
 
-
 #requests
