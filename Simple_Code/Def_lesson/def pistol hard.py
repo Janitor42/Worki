@@ -55,7 +55,7 @@ def check_shoot(shoot):
         print('-----------------------')
         value_reload-=1
         prepar=False
-
+print(1)
 
 
 
