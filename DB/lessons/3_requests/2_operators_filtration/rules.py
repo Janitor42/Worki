@@ -96,9 +96,6 @@ with sqlite3.connect('db_operators_filtration.db') as db:
 
 print('-' * 60)
 
-
-
-
 #GLOB и NULL  примеров не будет (GLOB - нужна большая бд, NULL слишком очевидно)
 # GLOB
 # Оператор GLOB также позволяет проверить, соответствует ли строка некоторому выражению.
