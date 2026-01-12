@@ -420,10 +420,10 @@ import asyncio
 #     await asyncio.sleep(0)  # Первый встречающийся await гарантирует что задачи начали выполняться
 #
 #     # Получаем ВСЕ текущие задачи (включая саму main())
-#     tasks = asyncio.all_tasks()  # Возвращает множество всех активных задач
+#     tasks.txt = asyncio.all_tasks()  # Возвращает множество всех активных задач
 #
 #     # Выводим информацию о каждой задаче
-#     for task in tasks:
+#     for task in tasks.txt:
 #         # get_name() - имя задачи, get_coro() - обёрнутая корутина
 #         print(f'> {task.get_name()}, {task.get_coro()}')
 #

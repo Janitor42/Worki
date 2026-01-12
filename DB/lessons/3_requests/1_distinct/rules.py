@@ -59,4 +59,5 @@ with sqlite3.connect('db_replace.db') as db:
     #strawberry к нам не попала
     cursor.execute(query)
     result = cursor.fetchall()
+
     print(result)
