@@ -1,8 +1,6 @@
 import json
 import tkinter as tk, random, time
 
-
-
 # x=70,y=75
 class Field:
     all_fields = {}
