@@ -47,7 +47,7 @@ def row_2(how_many, width, height):
     move_to_place(how_many, width, height)
 
 
-def build(width=40, height=20, long_row=10, height_row=40):
+def build(width=40, height=20, long_row=10, height_row=1):
     for i in range(height_row // 2):
         row_1(long_row, width, height)
         row_2(long_row, width, height)
@@ -57,8 +57,10 @@ def build(width=40, height=20, long_row=10, height_row=40):
 
 # endregion
 
+
+
 turtle.speed(20)
 
-build(long_row=8, height_row=4)
+build(long_row=7,height_row=5)
 
 turtle.mainloop()

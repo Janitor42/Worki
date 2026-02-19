@@ -86,7 +86,32 @@
 # root.mainloop()
 
 
+# a=('23','111sfda','egsd')
+# print(a[2])
 
-a=('23','111sfda','egsd')
 
-print(a[2])
+# x = [str(i) for i in range(1000, 10000)]
+#
+# result=[]
+# for i in x:
+#     q=[]
+#     if int(i[0]) == int(i[-1]) * 2:
+#         q.append(int(i[0]))
+#         q.append(int(i[-1]))
+#         if i[1] not in q:
+#             q.insert(1,int(i[1]))
+#             if i[2] not in q:
+#                 q.insert(2,int(i[2]))
+#                 if sum(q)==12:
+#
+#                     result.append(q)
+# print(result)
+
+# f = [[0, 0, 0, 0],
+#            [1, 1, 1, 1],
+#            [0, 0, 0, 0],
+#            [0, 0, 0, 0]]
+# print(f)
+
+
+

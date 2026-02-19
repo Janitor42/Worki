@@ -30,6 +30,7 @@ while True:
 
     letter.move_all(can=can)
     time.sleep(0.0001)
+
     win.update()
 
 
