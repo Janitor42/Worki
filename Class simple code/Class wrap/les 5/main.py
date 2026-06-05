@@ -13,7 +13,6 @@ wrap.world.create_world(win_x, win_y)
 wrap.world.set_back_color(255, 255, 255)
 
 times_between = 1
-
 all_stars = []
 all_square = []
 all_balls = []

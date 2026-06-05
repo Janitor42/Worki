@@ -1,6 +1,6 @@
 import turtle
 
-turtle.speed(1)
+turtle.speed(0)
 
 
 def create_line(how_many_lines):
@@ -11,6 +11,8 @@ def create_line(how_many_lines):
         turtle.forward(-100)
 
 
-create_line(how_many_lines=20)
+
+
+create_line(how_many_lines=10)
 
 turtle.mainloop()

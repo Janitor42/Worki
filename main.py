@@ -1,117 +1,54 @@
-# import time
-# import tkinter as tk
-#
-# win = tk.Tk()
-# win.geometry('1200x800+100+200')
-# win.config(background='black')
-#
-# can = tk.Canvas(width=1200, height=800, bg='black')
-# can.place(x=0, y=0)
-# coordsh = [725, 275, 725, 525]
-# coordsh2 = [725, 275, 725, 525]
-# base = can.create_oval(600, 400, 850, 650, fill='white')
-# hour_hand = can.create_line(*coordsh, fill='black', width=8)
-#
-# minute_hand = can.create_line(coordsh2,fill='red', width=8)
-# # second_hand = can.create_line()
-#
-# # a = [1, 2, 3, 4]
-# # print(a)                - Памятка
-# # print(*a)
-#
-# # while True:
-#
-# extra = [[16.7, 16.7], [-16.7, 16.7], [-16.7, -16.7], [16.7, -16.7]]
-#
-#
-# def action():
-#     for i in extra:
-#         piece(x=i[0], y=i[1], hand=hour_hand, wd=8)
-#
-#
-# def piece(x, y, hand, wd):
-#     for i in range(15):
-#         coordsh2[0], coordsh2[1], coordsh2[2], coordsh2[3] = coordsh2[0] + x, coordsh2[1] + y, coordsh2[2], coordsh2[3]
-#         time.sleep(0.1)
-#         can.delete(hand)
-#         hand = can.create_line(*coordsh2, fill='black', width=wd)
-#         if coordsh == coordsh2:
-#             print(1)
-#
-#         win.update()
-#     can.delete(hand)
-#
-#
-# action()
-# action()
-# win.mainloop()
+# for i in range(0,100):
+#     if i%10==3:
+#         print(i)
 
 #
-# import tkinter as tk
+# x=int(input('сколько числе вы хотите'))
 #
 #
-# def create_scrollable_window():
-#     root = tk.Tk()
-#     root.title("Окно с прокруткой")
-#     root.geometry("400x300")
+# for i in range(1,x+1):
+#     print('введите число №',i)
+#     input()
 #
-#     # Главный фрейм
-#     main_frame = tk.Frame(root)
-#     main_frame.pack(fill=tk.BOTH, expand=1)
-#
-#     # Canvas для прокрутки
-#     my_canvas = tk.Canvas(main_frame)
-#     my_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
-#
-#     # Scrollbar
-#     my_scrollbar = tk.Scrollbar(main_frame, orient=tk.VERTICAL, command=my_canvas.yview)
-#     my_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-#
-#     # Настройка canvas
-#     my_canvas.configure(yscrollcommand=my_scrollbar.set)
-#     my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion=my_canvas.bbox("all")))
-#
-#     # Фрейм для контента
-#     content_frame = tk.Frame(my_canvas)
-#     my_canvas.create_window((0, 0), window=content_frame, anchor="nw")
-#
-#     # Добавляем много элементов
-#     for i in range(50):
-#         tk.Label(content_frame, text=f"Элемент {i + 1}", font=("Arial", 12)).pack(pady=5)
-#
-#     return root
-#
-#
-# root = create_scrollable_window()
-# root.mainloop()
 
 
-# a=('23','111sfda','egsd')
-# print(a[2])
+# 1gallon=36miles
+# distance=2915miles
+# 20gallonintoyotasienna
+# 4hours 45 min break
+# every gazoleen stop is 15 min
+# 44 miles over one hour
 
 
-# x = [str(i) for i in range(1000, 10000)]
+# my_way = 0
+# distance = 2915
 #
-# result=[]
-# for i in x:
-#     q=[]
-#     if int(i[0]) == int(i[-1]) * 2:
-#         q.append(int(i[0]))
-#         q.append(int(i[-1]))
-#         if i[1] not in q:
-#             q.insert(1,int(i[1]))
-#             if i[2] not in q:
-#                 q.insert(2,int(i[2]))
-#                 if sum(q)==12:
+# distance_for_one_storage = 36 * 20
+# time = 0
+# minutes = 0
+# time_to_relax = 0
+# gas_storage = 20
 #
-#                     result.append(q)
-# print(result)
+# while my_way <= distance:
+#
+#     my_way += 44
+#     time += 1
+#     time_to_relax += 1
+#     gas_storage -= 1
+#
+#     if time_to_relax == 4:
+#         time_to_relax = 0
+#         minutes += 45
+#
+#     if gas_storage == 0:
+#         gas_storage = 20
+#         minutes += 15
+#
+# print(time + minutes // 60, minutes % 60)
 
-# f = [[0, 0, 0, 0],
-#            [1, 1, 1, 1],
-#            [0, 0, 0, 0],
-#            [0, 0, 0, 0]]
-# print(f)
 
-
-
+a='gread'
+a=a.split('r')
+print(a)
+x='r'.join(a)
+print(x)

@@ -1,6 +1,6 @@
 import turtle
 turtle.speed(0)
-
+#region
 def create_line(how_many_lines):
     for i in range(how_many_lines):
         line=360/how_many_lines
@@ -25,6 +25,8 @@ def create_small_effects(how_many_lines):
             size_small_lines=size_small_lines*1.2
         turtle.forward(-100)
 
-create_small_effects(how_many_lines=int(input("How many lines do you want?")))
+#endregion
+
+create_small_effects(how_many_lines=20)
 
 turtle.mainloop()

@@ -65,7 +65,7 @@ while True:
     square_red()
     screen.update()
     turtle.right(1)
-    time.sleep(0.1)
+    time.sleep(0.001)
 
 
 

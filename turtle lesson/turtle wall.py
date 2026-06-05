@@ -2,6 +2,7 @@ import turtle
 
 
 # region
+turtle.speed(20)
 def block(width, height):
     turtle.forward(width)
     turtle.left(90)
@@ -57,10 +58,6 @@ def build(width=40, height=20, long_row=10, height_row=1):
 
 # endregion
 
-
-
-turtle.speed(20)
-
-build(long_row=7,height_row=5)
+build(long_row=4,height_row=4)
 
 turtle.mainloop()

@@ -52,11 +52,12 @@
 #     if exponent == 0:
 #         return 1
 #     return power(base,exponent-1)*base
-# print(power(3, 1))
+# print(power(3, 3))
 
 4
 
-# Напиши рекурсивную функцию list_sum(arr), которая принимает список чисел и возвращает их сумму.
+# Напиши рекурсивную функцию list_sum(arr),
+# которая принимает список чисел и возвращает их сумму.
 # Нельзя использовать встроенную sum().
 # Нельзя использовать циклы (for, while).
 # Только рекурсия.
@@ -72,10 +73,10 @@
 # def list_sum(arr):
 #     if len(arr) == 0:
 #         return 0
-#     else:
-#         return arr[0] + list_sum(arr[1:])
+#     return arr[0] + list_sum(arr[1:])
+#
+#
 # print(list_sum([1, 2, 3, 4, 5]))
-
 
 5
 
@@ -131,7 +132,6 @@
 # list_reverse([5]) → [5]
 # list_reverse([]) → []
 
-# Можно сделать двумя способами, попробуй найти тот, который придёт в голову первым:
 # Поставить первый элемент в конец результата от переворота остатка.
 # Или поставить последний элемент в начало результата от переворота начала.
 
@@ -139,20 +139,13 @@
 # def list_reverse(arr):
 #     if len(arr) == 0:
 #         return []
-#     else:
-#         x = arr[0]
+#
+#     x = arr[0]
 #     return list_reverse(arr[1:]) + [x]
 #
 #
-# def list_reverse_v2(arr):
-#     if len(arr) == 0:
-#         return []
-#     else:
-#         x = arr[0]
-#     return list_reverse_v2(arr[1:]) + [x]
-#
+# #
 # print(list_reverse(arr=[1, 2, 3, 4]))
-# print(list_reverse_v2(arr=[1, 2, 3, 4]))
 
 """визуальное обьяснение 6"""
 # list_reverse([1, 2, 3, 4])
@@ -167,6 +160,7 @@
 #   ← [4, 3, 2, 1]
 
 7
+
 
 # Задача с привкусом ЕГЭ (но без паники)
 # Напиши рекурсивную функцию count_ways(n), которая считает,
@@ -190,9 +184,30 @@
 #         return 1
 #     if n == 2:  # базис 2
 #         return 2
-#     return count_ways(n-1)+count_ways(n-2)
+#     x = count_ways(n - 1)
+#     x += count_ways(n - 2)
+#     return x
 #
-# print(count_ways(n=4))
+#
+# print(count_ways(n=5))
+
+# с использованием словаря для использования уже найденых значений
+# def count_ways(n, memo={}):
+#     if n in memo:
+#         return memo[n]
+#
+#     if n == 1:
+#         return 1
+#     if n == 2:
+#         return 2
+#
+#     memo[n] = count_ways(n - 1) + count_ways(n - 2)
+#     return memo[n]
+#
+#
+#
+
+# 165580141
 """визуальное обьяснение 7"""
 # count_ways(4) = count_ways(3) + count_ways(2)
 #               = (count_ways(2) + count_ways(1)) + 2
@@ -226,18 +241,20 @@
 # Если start == 5 → 0 (запретное число)
 
 # result = []
-# def count_ways_ege(start, target):
-#     if start > target:
-#         return 0
 #
-#     if start == 5:
+#
+# def count_ways_ege(start, target):
+#     if start == 5 or start > target:
 #         return 0
 #
 #     if start == target:
 #         result.append(1)
 #         return 0
+#
 #     return count_ways_ege(start + 1, target) + count_ways_ege(start * 2, target)
-# count_ways_ege(1, 10)
+#
+#
+# count_ways_ege(1, 40)
 # print(len(result))
 
 9
@@ -256,7 +273,8 @@
 # Траектория — это все промежуточные результаты, включая начальный (1) и конечный (20).
 # Число 10 в траектории запрещено (нельзя ни быть в 10, ни проходить через него).
 
-# Напиши рекурсивную функцию count_ways_ege2(start, target), которая возвращает количество программ, удовлетворяющих условию.
+# Напиши рекурсивную функцию count_ways_ege2(start, target),
+# которая возвращает количество программ, удовлетворяющих условию.
 #
 # Базисы:
 # Если start > target → 0
@@ -332,3 +350,28 @@
 #                  ↑               ↓        ↓
 #                вернёт 5         n<4 → 4   n<4 → 6
 #                                вернёт 4
+
+
+#
+# a = 1
+# b = 16
+# all_path = []
+# all_simbols=[]
+#
+# def recursion(a, b, simbol=None):
+#     if simbol==None:
+#
+#         simbol=[]
+#     if a == b:
+#         all_simbols.append(simbol.copy())
+#         return 1
+#     if a > b:
+#         return 0
+#     x = recursion(a+1, b, simbol+['+'])
+#     x += recursion(a*2, b, simbol+['*'])
+#     return x
+#
+#
+# recursion(a, b)
+# print(all_path)
+# print(all_simbols)
