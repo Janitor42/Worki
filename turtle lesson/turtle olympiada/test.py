@@ -1,6 +1,6 @@
 import turtle as t
 
-t.speed(6)
+t.speed(0)
 t.pensize(2)
 
 def rectangle_spiral():

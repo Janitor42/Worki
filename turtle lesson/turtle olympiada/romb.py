@@ -1,9 +1,9 @@
 import turtle as t
 
 #region
-t.speed(0)
+t.speed(6)
 t.pensize(3)
-t.Turtle
+
 
 def figure():
     t.right(30)

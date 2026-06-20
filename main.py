@@ -45,10 +45,17 @@
 #         minutes += 15
 #
 # print(time + minutes // 60, minutes % 60)
+#
+# value = 3
+# data = []
+# for i in range(value):
+#     row = []
+#     for j in range(value):
+#         row.append(abs(i - j))
+#     data.append(row)
+# for row in data:
+#     print(row)
 
 
-a='gread'
-a=a.split('r')
-print(a)
-x='r'.join(a)
-print(x)
+
+import requests
