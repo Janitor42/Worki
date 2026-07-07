@@ -38,13 +38,13 @@ size1=100
 size2=300
 size3=320
 for i in range(1):
-    t.circle(size1,180)
-    t.circle(size2,45)
-    t.circle(-size3,50)
+    turtle.circle(100,180)
+    turtle.circle(300,45)
+    turtle.circle(-320,50)
 
-    t.circle(-size1,180)
-    t.circle(-size2,45)
-    t.circle(size3,50)
+    turtle.circle(-100,180)
+    turtle.circle(-300,45)
+    turtle.circle(320,50)
 
     size1+=10
     size2+=10

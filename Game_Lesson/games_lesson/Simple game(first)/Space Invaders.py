@@ -132,6 +132,39 @@ def move_bullet():
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import wrap_py
 wrap_py.app.start()
 

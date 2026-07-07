@@ -10,10 +10,14 @@ from pprint import pprint
 # Отсортирует пользователей по полу (женщины и мужчины) и выведет их отдельно.
 # Условия:
 # Используй параметр gender в запросе.
-# Напечатай список мужчин и женщин по очереди (например, сначала все мужчины, потом все женщины
+# Напечатай список мужчин и женщин по очереди (например, сначала все мужчины,
+# потом все женщины
 # (имя город, страна, дата рождения, username).
 
-# url = 'https://randomuser.me/api/?results=6'
+# value=4
+
+#region
+# url = f'https://randomuser.me/api/?results={value}'
 # save = requests.get(url).json()
 #
 # for i in save['results']:
@@ -25,29 +29,38 @@ from pprint import pprint
 #     if i['gender'] == 'male':
 #         print(f" Name :{i['name']['first']}\n City :{i['location']['city']}\n Country :{i['location']['country']}\n"
 #               f" Date of birth : {i['dob']['date']}\n Username: {i['login']['username']}\n {'-' * 120}")
-
+#endregion
 # 2
 # Задание: Создание генератора пользователей с пагинацией
-# Напиши скрипт, который будет получать пользователей с API randomuser.me, используя пагинацию и выводить имена и emails.
+# Напиши скрипт, который будет получать пользователей с API randomuser.me, используя пагинацию
+# и выводить имена и emails.
 # Убедись, что пагинация работает: ты должен загрузить несколько страниц, а не просто одну.
 # Условия:
 # Используй параметр page.
 # Выведи только имена и emails.
 # Добавь проверку на ошибку, если запрос не успешен (например, код ошибки 404 или 500).
+page=60
+# #region
 
-# for i in range(1, 6):
-#     try:
-#         url = f'https://randomuser.me/api/?seed=aaa&results=4&page={i}'
-#         response=requests.get(url)
-#         response.raise_for_status() #проверка статуса
-#         response=response.json()
-#         response=response['results']
-#         for user in response:
-#             print(f" Name :{user['name']['first']} , Email : {user['email']}")
-#         print('_'*120)
-#     except Exception as e:
-#         print('ошибка')
+for i in range(1, page + 1):
+    try:
+        url = f'https://randomuser.me/api/?seed=aaa&results=4&page={i}'
+        # 0.5 секунд — слишком маленький таймаут для внешнего API, увеличим до 5
+        response = requests.get(url, timeout=0.5)
+        response.raise_for_status()
 
+        data = response.json()
+        users = data['results']
+        # ВИЗУАЛЬНЫЙ ЯКОРЬ: Показываем начало новой страницы
+        print(f"\n--- СТРАНИЦА {i} ---")
+        for user in users:
+            print(f" Name: {user['name']['first']:<10} | Email: {user['email']}")
+    except Exception as e:
+        # Ученику важно видеть, какая именно страница упала
+        print(f"Ошибка при загрузке страницы {i}: {e}")
+    # Общий финал
+print("\n" + "=" * 40 + "\nСбор данных завершен!")
+#endregion
 
 # 3
 # Задание: Пагинация с множественными запросами
@@ -64,8 +77,9 @@ from pprint import pprint
 # def go(results, total_users):
 #     page=1
 #     while True:
+#         print(1)
 #         url = f'https://randomuser.me/api/?seed=test&results={results}&page={page}'
-#         resp = requests.get(url)
+#         resp = requests.get(url,timeout=1)
 #         resp.raise_for_status()  # проверка статуса
 #         resp = resp.json()
 #         resp = resp['results']

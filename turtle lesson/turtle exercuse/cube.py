@@ -1,4 +1,5 @@
 import turtle
+#region
 turtle.speed(21)
 def line(angle_begin, line1, angle1, line2, angle2, line3):
     turtle.left(angle_begin)
@@ -19,5 +20,5 @@ line(-135, 100 / 3, 0, 0, 0, 0)
 line(45, 200, 90, 200, -135, 100 / 3)
 line(-45, 200, -90, 200, 135, 100 / 3)
 line(45, 200, 90, 200, -135, 0)
-
+#endregion
 turtle.mainloop()

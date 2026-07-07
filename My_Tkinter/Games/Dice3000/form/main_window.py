@@ -22,7 +22,7 @@ class Main_window:
         self.player_decoration()
 
     def read_rules(self):
-        x = open('rules.txt', 'r', encoding='utf-8')
+        x = open('rules.txt.txt', 'r', encoding='utf-8')
         x = x.readlines()
         for index, text in enumerate(x):
             self.text_rules.insert(f'{index}.0', text)

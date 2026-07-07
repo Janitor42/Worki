@@ -1,0 +1,196 @@
+[
+  {
+    "id": 1,
+    "name": "Игнис",
+    "type": "creature",
+    "element": "fire",
+    "cost": 1,
+    "attack_power": 1,
+    "hp": 2,
+    "description": "Обычный огненный дух. Быстрый и дешевый."
+  },
+  {
+    "id": 2,
+    "name": "Феникс",
+    "type": "creature",
+    "element": "fire",
+    "cost": 2,
+    "attack_power": 2,
+    "hp": 2,
+    "description": "Агрессивное существо, наносит неплохой урон."
+  },
+  {
+    "id": 3,
+    "name": "Магма-Лорд",
+    "type": "creature",
+    "element": "fire",
+    "cost": 3,
+    "attack_power": 3,
+    "hp": 3,
+    "description": "Мощный гигант. Настоящая угроза на поле."
+  },
+  {
+    "id": 4,
+    "name": "Пиромант",
+    "type": "creature",
+    "element": "fire",
+    "cost": 2,
+    "attack_power": 3,
+    "hp": 1,
+    "description": "Высокая атака, но очень мало здоровья. Стеклопушка."
+  },
+  {
+    "id": 5,
+    "name": "Капелька",
+    "type": "creature",
+    "element": "water",
+    "cost": 1,
+    "attack_power": 0,
+    "hp": 4,
+    "description": "Слабая атака, но отличная защита для начала игры."
+  },
+  {
+    "id": 6,
+    "name": "Водяной",
+    "type": "creature",
+    "element": "water",
+    "cost": 2,
+    "attack_power": 1,
+    "hp": 4,
+    "description": "Сбалансированное водное существо со сдвигом в защиту."
+  },
+  {
+    "id": 7,
+    "name": "Левиафан",
+    "type": "creature",
+    "element": "water",
+    "cost": 3,
+    "attack_power": 2,
+    "hp": 6,
+    "description": "Огромный запас здоровья. Его крайне тяжело уничтожить."
+  },
+  {
+    "id": 8,
+    "name": "Коралл",
+    "type": "creature",
+    "element": "water",
+    "cost": 1,
+    "attack_power": 1,
+    "hp": 2,
+    "description": "Базовое водное существо для контроля стола."
+  },
+  {
+    "id": 9,
+    "name": "Росток",
+    "type": "creature",
+    "element": "earth",
+    "cost": 1,
+    "attack_power": 1,
+    "hp": 2,
+    "description": "Маленький дух леса. Базовый боец земли."
+  },
+  {
+    "id": 10,
+    "name": "Голем",
+    "type": "creature",
+    "element": "earth",
+    "cost": 2,
+    "attack_power": 2,
+    "hp": 3,
+    "description": "Каменный солдат с хорошими средними показателями."
+  },
+  {
+    "id": 11,
+    "name": "Энт-Хранитель",
+    "type": "creature",
+    "element": "earth",
+    "cost": 3,
+    "attack_power": 3,
+    "hp": 4,
+    "description": "Древнее дерево. Обладает сокрушительной силой."
+  },
+  {
+    "id": 12,
+    "name": "Песчаный червь",
+    "type": "creature",
+    "element": "earth",
+    "cost": 2,
+    "attack_power": 1,
+    "hp": 5,
+    "description": "Скрывается под землей. Высокая выживаемость."
+  },
+  {
+    "id": 13,
+    "name": "Вспышка",
+    "type": "creature",
+    "element": "fire",
+    "cost": 1,
+    "attack_power": 2,
+    "hp": 1,
+    "description": "Элементаль чистого огня. Живет недолго, но бьет больно."
+  },
+  {
+    "id": 14,
+    "name": "Черепаха",
+    "type": "creature",
+    "element": "water",
+    "cost": 2,
+    "attack_power": 0,
+    "hp": 6,
+    "description": "Абсолютный защитник. Идеальна для блокирования урона."
+  },
+  {
+    "id": 15,
+    "name": "Огненный шар",
+    "type": "spell",
+    "spell_type": "damage",
+    "cost": 2,
+    "power": 3,
+    "description": "Наносит 3 единицы урона любому существу или игроку."
+  },
+  {
+    "id": 16,
+    "name": "Метеорит",
+    "type": "spell",
+    "spell_type": "damage",
+    "cost": 3,
+    "power": 5,
+    "description": "Огромный урон (5 единиц) в одну цель. Тратит всю энергию."
+  },
+  {
+    "id": 17,
+    "name": "Живая вода",
+    "type": "spell",
+    "spell_type": "heal",
+    "cost": 1,
+    "power": 3,
+    "description": "Восстанавливает 3 единицы здоровья существу или игроку."
+  },
+  {
+    "id": 18,
+    "name": "Благословение",
+    "type": "spell",
+    "spell_type": "heal",
+    "cost": 2,
+    "power": 6,
+    "description": "Мощное исцеление (6 единиц). Спасает в критической ситуации."
+  },
+  {
+    "id": 19,
+    "name": "Каменная кожа",
+    "type": "spell",
+    "spell_type": "buff",
+    "cost": 1,
+    "power": 3,
+    "description": "Дает выбранному существу +3 к максимальному и текущему HP."
+  },
+  {
+    "id": 20,
+    "name": "Ярость земли",
+    "type": "spell",
+    "spell_type": "buff",
+    "cost": 2,
+    "power": 2,
+    "description": "Увеличивает здоровье существа на +2 и атаку на +2."
+  }
+]
