@@ -1,6 +1,6 @@
 import turtle
 
-turtle.speed(0)
+turtle.speed(1)
 
 
 def create_line(how_many_lines):

@@ -39,27 +39,27 @@ from pprint import pprint
 # Используй параметр page.
 # Выведи только имена и emails.
 # Добавь проверку на ошибку, если запрос не успешен (например, код ошибки 404 или 500).
-page=60
+# page=60
 # #region
 
-for i in range(1, page + 1):
-    try:
-        url = f'https://randomuser.me/api/?seed=aaa&results=4&page={i}'
-        # 0.5 секунд — слишком маленький таймаут для внешнего API, увеличим до 5
-        response = requests.get(url, timeout=0.5)
-        response.raise_for_status()
-
-        data = response.json()
-        users = data['results']
-        # ВИЗУАЛЬНЫЙ ЯКОРЬ: Показываем начало новой страницы
-        print(f"\n--- СТРАНИЦА {i} ---")
-        for user in users:
-            print(f" Name: {user['name']['first']:<10} | Email: {user['email']}")
-    except Exception as e:
-        # Ученику важно видеть, какая именно страница упала
-        print(f"Ошибка при загрузке страницы {i}: {e}")
-    # Общий финал
-print("\n" + "=" * 40 + "\nСбор данных завершен!")
+# for i in range(1, page + 1):
+#     try:
+#         url = f'https://randomuser.me/api/?seed=aaa&results=4&page={i}'
+#         # 0.5 секунд — слишком маленький таймаут для внешнего API, увеличим до 5
+#         response = requests.get(url, timeout=0.5)
+#         response.raise_for_status()
+#
+#         data = response.json()
+#         users = data['results']
+#         # ВИЗУАЛЬНЫЙ ЯКОРЬ: Показываем начало новой страницы
+#         print(f"\n--- СТРАНИЦА {i} ---")
+#         for user in users:
+#             print(f" Name: {user['name']['first']:<10} | Email: {user['email']}")
+#     except Exception as e:
+#         # Ученику важно видеть, какая именно страница упала
+#         print(f"Ошибка при загрузке страницы {i}: {e}")
+#     # Общий финал
+# print("\n" + "=" * 40 + "\nСбор данных завершен!")
 #endregion
 
 # 3
@@ -101,37 +101,37 @@ print("\n" + "=" * 40 + "\nСбор данных завершен!")
 # Сколько человек из каждой страны (country).
 # Отсортировать по убыванию.
 
-# all_users = {}
-# results = 5
-# total_users = 50
+all_users = {}
+results = 5
+total_users = 50
+
+
+def go(results, total_users):
+    page = 1
+    value=1
+    while True:
+        try:
+            url = f'https://randomuser.me/api/?seed=test&results={results}&page={page}'
+            resp = requests.get(url,timeout=0.5)
+            resp.raise_for_status()  # проверка статуса
+            resp = resp.json()
+            resp = resp['results']
+            for user in resp:
+                if value > total_users:
+                    return
+                if user['location']['country'] not in all_users:
+                    all_users[user['location']['country']] = 1
+                else:
+                    all_users[user['location']['country']] += 1
+                value+=1
+            page += 1
+        except:
+            print('page not opening, start next page')
+
+
+go(results, total_users)
+
+all_users_sorted = dict(sorted(all_users.items(), key=lambda item: item[1], reverse=True))
 #
-#
-# def go(results, total_users):
-#     page = 1
-#     value=1
-#     while True:
-#         try:
-#             url = f'https://randomuser.me/api/?seed=test&results={results}&page={page}'
-#             resp = requests.get(url)
-#             resp.raise_for_status()  # проверка статуса
-#             resp = resp.json()
-#             resp = resp['results']
-#             for user in resp:
-#                 if value > total_users:
-#                     return
-#                 if user['location']['country'] not in all_users:
-#                     all_users[user['location']['country']] = 1
-#                 else:
-#                     all_users[user['location']['country']] += 1
-#                 value+=1
-#             page += 1
-#         except:
-#             print('page not opening, start next page')
-#
-#
-# go(results, total_users)
-#
-# all_users_sorted = dict(sorted(all_users.items(), key=lambda item: item[1], reverse=True))
-#
-# for q, w in all_users_sorted.items():
-#     print(q, w)
+for q, w in all_users_sorted.items():
+    print(q, w)

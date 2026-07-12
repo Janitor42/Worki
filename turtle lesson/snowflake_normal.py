@@ -27,6 +27,6 @@ def create_small_effects(how_many_lines):
 
 #endregion
 
-create_small_effects(how_many_lines=20)
+create_small_effects(how_many_lines=10)
 
 turtle.mainloop()
