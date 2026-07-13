@@ -8,19 +8,18 @@ class HandController:
         self._model = player_model
         self.gui = player_gui
 
-    def update_view(self):
+    def update_visual(self):
+        self.gui.update_visual()
         self.gui.clear_widgets('hand_widgets')
         self.gui.clear_widgets('board_widgets')
 
         logic_card = self._model.get_attr('hand')
-        if not logic_card:
-            return
-        self.collect_view(logic_card=logic_card, atr_frame='frame_hand', atr_list='hand_widgets')
+        if logic_card:
+            self.collect_view(logic_card=logic_card, atr_frame='frame_hand', atr_list='hand_widgets')
 
         logic_card = self._model.get_attr('table')
-        if not logic_card:
-            return
-        self.collect_view(logic_card=logic_card, atr_frame='frame_board', atr_list='board_widgets')
+        if logic_card:
+            self.collect_view(logic_card=logic_card, atr_frame='frame_board', atr_list='board_widgets')
 
     def collect_view(self, logic_card, atr_frame, atr_list):
         atr_frame = getattr(self.gui, atr_frame, None)
