@@ -17,7 +17,7 @@ class Player:
         self._deck = full_deck.copy()
         random.shuffle(self._deck)
         self.hand = []
-        self._table = []
+        self.table = []
 
     def draw_card(self):
         if self._deck:
@@ -52,7 +52,7 @@ class Player:
         for index, obj in enumerate(self.hand):
             name = obj.get_attr('_name')
             if target == name and Player.get_creature(obj):
-                self._table.append(self.hand.pop(index))
+                self.table.append(self.hand.pop(index))
                 return
             if target == name and not Player.get_creature(obj):
                 self.hand.remove(obj)

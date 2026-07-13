@@ -1,25 +1,32 @@
 from controller.config import *
 from gui.card_widget import CardWidget
-from gui.player_board import PlayerBoard
+
 
 class HandController:
 
     def __init__(self, player_model, player_gui):
         self._model = player_model
-        self._gui = player_gui
+        self.gui = player_gui
 
-    def update_hand_view(self):
-        self._gui.clear_table_hand()
+    def update_view(self):
+        self.gui.clear_widgets('hand_widgets')
+        self.gui.clear_widgets('board_widgets')
 
-        logic_cards = self._model.get_attr('hand')
-        if not logic_cards:
+        logic_card = self._model.get_attr('hand')
+        if not logic_card:
             return
+        self.collect_view(logic_card=logic_card, atr_frame='frame_hand', atr_list='hand_widgets')
 
-        for index, model_card in enumerate(logic_cards):
+        logic_card = self._model.get_attr('table')
+        if not logic_card:
+            return
+        self.collect_view(logic_card=logic_card, atr_frame='frame_board', atr_list='board_widgets')
 
-            card_view = CardWidget(card_logic=model_card, parent_widget=self._gui.frame_hand)
+    def collect_view(self, logic_card, atr_frame, atr_list):
+        atr_frame = getattr(self.gui, atr_frame, None)
+        atr_list = getattr(self.gui, atr_list, None)
+        for index, model_card in enumerate(logic_card):
+            card_view = CardWidget(card_logic=model_card, parent_widget=atr_frame)
             x_pos = index * DISTANCE_X + INDENT_X
             card_view.place(x=x_pos, y=INDENT_Y)
-
-            self._gui.hand_widgets.append(card_view)
-
+            atr_list.append(card_view)

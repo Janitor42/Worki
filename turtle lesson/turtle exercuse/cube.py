@@ -1,7 +1,6 @@
 import turtle
 #region
 turtle.speed(1)
-
 def line(angle_begin, line1, angle1, line2, angle2, line3):
     turtle.left(angle_begin)
     turtle.forward(line1)

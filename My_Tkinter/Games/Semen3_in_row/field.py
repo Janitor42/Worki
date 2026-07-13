@@ -150,7 +150,6 @@ class Field:
             return
         if Field.find_two_buttons_near():
             Field.change_two_buttons_colors()
-            # todo вот здесь будем писать метод который запустит логику уничтожения части поля и т.д
         Field.buttons.clear()
 
     # endregion

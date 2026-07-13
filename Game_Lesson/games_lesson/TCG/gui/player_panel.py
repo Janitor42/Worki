@@ -8,10 +8,9 @@ class PlayerPanel:
         self.frame_player = tk.Frame(root, width=150, height=200)
 
         self.frame_hand = tk.Frame(root, bg='darkgray', width=620, height=200)
-
+        self.frame_board = tk.Frame(root, bg="gray70", width=620, height=200, bd=1, relief="sunken")
         self.name_label = tk.Label(self.frame_player, text=self.logic.get_attr('_name'), font=("Arial", 20))
         self.name_label.place(x=10, y=0)
-
         self.hp_label = tk.Label(self.frame_player, text=f"❤ Здоровье: {self.logic.get_attr('_hp')}",
                                  font=("Arial", 12))
         self.hp_label.place(x=10, y=45)
@@ -21,12 +20,12 @@ class PlayerPanel:
         self.energy_label.place(x=10, y=75)
 
         self.hand_widgets = []
+        self.board_widgets = []
 
-        self.clear_table_hand()
-
-    def place_container(self, x, y):
-        self.frame_player.place(x=x, y=y)
-        self.frame_hand.place(x=x + 160, y=y)
+    def place_container(self, x, y_hand, y_board):
+        self.frame_player.place(x=x, y=y_hand)
+        self.frame_hand.place(x=x + 160, y=y_hand)
+        self.frame_board.place(x=x + 160, y=y_board)
 
     def update_visual(self):
         hp = self.logic.get_attr('_hp')
@@ -34,8 +33,8 @@ class PlayerPanel:
         self.hp_label.config(text=f"❤ Здоровье: {hp}")
         self.energy_label.config(text=f"⚡ Энергия: {energy}/3")
 
-    def clear_table_hand(self):
-        for obj in self.hand_widgets:
+    def clear_widgets(self, atr):
+        atr = getattr(self, atr, [])
+        for obj in atr:
             obj.destroy_widget()
-        self.hand_widgets.clear()
-
+        atr.clear()
