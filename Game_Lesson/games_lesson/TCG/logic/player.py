@@ -29,11 +29,11 @@ class Player:
     def get_attr(self, atr):
         return getattr(self, atr, None)
 
-    def take_cards(self):
+    def begin_round(self):
         self.reset_energy()
-        if not len(self._deck) > 4:
+        if not len(self._deck) > config.MAX_CARDS_ON_TABLE:
             return False
-        target = config.NUMBER_OF_CARDS_IN_HAND - len(self.hand)
+        target = config.MAX_CARDS_ON_TABLE - len(self.hand)
         for i in range(target):
             self.draw_card()
         return True
