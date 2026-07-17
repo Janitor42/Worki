@@ -52,9 +52,9 @@ class Player:
     def set_energy(self, energy):
         self._energy -= energy
 
-    def check_card_to_play(self, obj):
-        price = obj.get_price()
-        name = obj.get_name()
+    def check_card_to_play(self, card_logic):
+        price = card_logic.get_attr('_cost')
+        name = card_logic.get_attr('_name')
         if self._energy >= price:
             self.set_energy(energy=price)
             self.remove_and_take_from_table(target=name)

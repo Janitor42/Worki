@@ -84,6 +84,7 @@ class GameController:
                 return
             if self.creature_hit_creature_enemy(target=target):
                 return
+        self.selected_creature = None
 
         if self.play_form_hand(target=target):
             return
@@ -94,7 +95,8 @@ class GameController:
         hand_widgets = [x for x in self.player_gui.hand_widgets]
         card_widget = GameController.find_card_by_target(target=target, widget_list=hand_widgets)
         if card_widget:
-            if self._player_model.check_card_to_play(obj=card_widget):
+            card_widget: CardWidget
+            if self._player_model.check_card_to_play(card_logic=card_widget.card_logic):
                 self.player_controller.update_visual()
             else:
                 self.game_field.information_action(text='Недостаточно энергии')
@@ -115,6 +117,7 @@ class GameController:
             self.game_field.information_action(text=f'Вы выбрали {self.selected_creature.get_name()}, кого атакуете?')
         else:
             self.game_field.information_action(text=f'существо не может атаковать')
+            self.selected_creature = None
 
     def creature_hit_enemy_hero(self, target):
         leader_widgets = self.bot_gui.get_draw_obj()
@@ -139,4 +142,4 @@ class GameController:
             self.selected_creature = False
             return True
         return False
-# endregion
+    # endregion
