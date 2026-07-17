@@ -4,18 +4,18 @@ import tkinter as tk
 class GameField:
     def __init__(self, parent):
         self.bot_speak_end_turn = None
-        self.no_enough_energy_bt = None
+        self.information_label = None
         self.root = parent
         self.end_turn_btn = tk.Button(self.root, text="Конец хода", font=("Arial", 12, "bold"), bg="lightgray")
         self.end_turn_btn.place(x=25, y=530, width=120, height=40)
 
-    def no_enough_energy_action(self):
-        self.no_enough_energy_bt = tk.Label(self.root, text=f"Недостаточно энергии",
-                                            font=("Arial", 12), bg="yellow")
+    def information_action(self, text:str):
+        self.information_label = tk.Label(self.root, text=text,
+                                          font=("Arial", 12), bg="yellow")
 
-        self.no_enough_energy_bt.place(x=380, y=400)
-        self.no_enough_energy_bt.lift()
-        self.no_enough_energy_bt.after(1000, self.no_enough_energy_bt.destroy)
+        self.information_label.place(x=380, y=400)
+        self.information_label.lift()
+        self.information_label.after(1000, self.information_label.destroy)
 
     def bot_speak_end_turn_action(self):
         self.bot_speak_end_turn = tk.Label(self.root, text=f"Теперь я закончил",

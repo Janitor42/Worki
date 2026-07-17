@@ -19,6 +19,9 @@ class PlayerPanel:
                                      font=("Arial", 12))
         self.energy_label.place(x=10, y=75)
 
+        self.sing_label = tk.Label(self.frame_player,background='black')
+        self.sing_label.place(x=10, y=100, width=130, height=90)
+
         self.hand_widgets = []
         self.board_widgets = []
 
@@ -38,3 +41,7 @@ class PlayerPanel:
         for obj in atr:
             obj.destroy_widget()
         atr.clear()
+
+
+    def get_draw_obj(self):
+        return [self.frame_player, self.name_label, self.hp_label, self.energy_label, self.sing_label]

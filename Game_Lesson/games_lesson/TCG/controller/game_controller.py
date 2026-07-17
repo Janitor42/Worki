@@ -1,5 +1,3 @@
-import random
-
 from dataclasses import dataclass
 
 from gui.player_panel import PlayerPanel
@@ -11,6 +9,15 @@ from controller.ai_controller import AIController
 
 
 class GameController:
+    @staticmethod
+    def find_card_by_target(target, widget_list):
+        for hand_widget in widget_list:
+            hand_widget: CardWidget
+            if target in hand_widget.get_draw_obj():
+                card_widget = hand_widget
+                return card_widget
+        return False
+
     @dataclass
     class Views:
         player_gui: PlayerPanel
@@ -25,7 +32,8 @@ class GameController:
         self.bot_gui = views.bot_gui
         self.game_field = views.game_field
 
-        self._is_player_turn = random.choice([True, False])
+        # self._is_player_turn = random.choice([True, False])
+        self._is_player_turn = True
 
         self.player_controller = HandController(player_model=self._player_model, player_gui=self.player_gui)
         self.player_controller.update_visual()
@@ -37,6 +45,8 @@ class GameController:
         self.game_field.end_turn_btn.config(command=self.end_turn_action)
         self.game_field.root.bind('<ButtonPress-1>', self.human_turn)
 
+        self.selected_creature = None
+
         if not self._is_player_turn:
             self.game_field.root.after(1000, self.ai_turn)
 
@@ -47,6 +57,7 @@ class GameController:
             self._is_player_turn = False
             self.game_field.turn_off_interface()
             self.game_field.root.after(1000, self.ai_turn)
+            self.selected_creature = False
 
     def ai_turn(self):
         if self._is_player_turn:
@@ -62,28 +73,70 @@ class GameController:
             self.game_field.turn_on_interface()
             self._is_player_turn = True
 
-
-
-
+    # region human
     def human_turn(self, event):
         if not self._is_player_turn:
             return
-
         target = event.widget
-        hand_widgets = [x for x in self.player_gui.hand_widgets]
-        card_widget = False
 
-        for hand_widget in hand_widgets:
-            hand_widget: CardWidget
-            if target in hand_widget.get_draw_obj():
-                card_widget = hand_widget
-                break
+        if self.selected_creature:
+            if self.creature_hit_enemy_hero(target=target):
+                return
+            if self.creature_hit_creature_enemy(target=target):
+                return
 
-        if not card_widget:
+        if self.play_form_hand(target=target):
             return
-        card_widget: CardWidget
+        if self.play_form_board(target=target):
+            return
 
-        if self._player_model.check_card_to_play(obj=card_widget):
-            self.player_controller.update_visual()
+    def play_form_hand(self, target):
+        hand_widgets = [x for x in self.player_gui.hand_widgets]
+        card_widget = GameController.find_card_by_target(target=target, widget_list=hand_widgets)
+        if card_widget:
+            if self._player_model.check_card_to_play(obj=card_widget):
+                self.player_controller.update_visual()
+            else:
+                self.game_field.information_action(text='Недостаточно энергии')
+            return True
+        return False
+
+    def play_form_board(self, target):
+        board_widgets = [x for x in self.player_gui.board_widgets]
+        card_widget = GameController.find_card_by_target(target=target, widget_list=board_widgets)
+        if card_widget:
+            self.selected_creature = card_widget
+            self.information_about_your_choice()
+            return True
+        return False
+
+    def information_about_your_choice(self):
+        if self.selected_creature.card_logic.get_state_attack():
+            self.game_field.information_action(text=f'Вы выбрали {self.selected_creature.get_name()}, кого атакуете?')
         else:
-            self.game_field.no_enough_energy_action()
+            self.game_field.information_action(text=f'существо не может атаковать')
+
+    def creature_hit_enemy_hero(self, target):
+        leader_widgets = self.bot_gui.get_draw_obj()
+        if target in leader_widgets:
+            self._player_model.attack_enemy_hero(attacked_card_model=self.selected_creature.card_logic,
+                                                 enemy_player_model=self._bot_model)
+            self.bot_controller.update_visual()
+            self.selected_creature = False
+            return True
+        return False
+
+    def creature_hit_creature_enemy(self, target):
+        board_widgets = [x for x in self.bot_gui.board_widgets]
+        card_widget = GameController.find_card_by_target(target=target, widget_list=board_widgets)
+
+        if card_widget:
+            card_widget: CardWidget
+            self._player_model.attack_creature_to_creature(my_creature=self.selected_creature.card_logic,
+                                                           enemy_creature=card_widget.card_logic)
+            self.bot_controller.update_visual()
+            self.player_controller.update_visual()
+            self.selected_creature = False
+            return True
+        return False
+# endregion

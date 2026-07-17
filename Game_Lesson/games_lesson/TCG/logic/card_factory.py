@@ -13,7 +13,7 @@ def load_deck_from_json(json_file):
     for i in file:
         if i['type'] == 'creature':
             target = CreatureCard(name=i['name'], cost=i['cost'], element=i['element'], attack_power=i['attack_power'],
-                                  hp=i['hp'])
+                                  hp=i['hp'], keywords=i['keywords'])
             deck.append(target)
         elif i['type'] == 'spell':
             target = SpellCard(name=i['name'], cost=i['cost'], spell_type=i['spell_type'], power=i['power'])
