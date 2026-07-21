@@ -8,7 +8,10 @@ class HandController:
         self._model = player_model
         self.gui = player_gui
 
+
+
     def update_visual(self):
+        self._model.destroy_my_dead_cards()
         self.gui.update_visual()
         self.gui.clear_widgets('hand_widgets')
         self.gui.clear_widgets('board_widgets')
@@ -29,3 +32,4 @@ class HandController:
             x_pos = index * DISTANCE_X + INDENT_X
             card_view.place(x=x_pos, y=INDENT_Y)
             atr_list.append(card_view)
+

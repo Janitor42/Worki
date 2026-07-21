@@ -59,12 +59,17 @@ class GameController:
             self.game_field.root.after(1000, self.ai_turn)
             self.selected_creature_model = False
 
+    # region bot
     def ai_turn(self):
+        self.player_controller.update_visual()
+        self.bot_controller.update_visual()
         if self._is_player_turn:
             return
-        try_played = self.ai_boot.try_play_card()
-        if try_played:
-            self.bot_controller.update_visual()
+        card_from_hand = self.ai_boot.play_card_from_hand()
+        card_from_table = self.ai_boot.play_card_from_table(enemy_player_model=self._player_model)
+        if card_from_hand:
+            self.game_field.root.after(1000, self.ai_turn)
+        elif card_from_table:
             self.game_field.root.after(1000, self.ai_turn)
         else:
             self._bot_model.begin_round()
@@ -72,6 +77,8 @@ class GameController:
             self.game_field.bot_speak_end_turn_action()
             self.game_field.turn_on_interface()
             self._is_player_turn = True
+
+    # endregion
 
     # region human
     def human_turn(self, event):
@@ -90,6 +97,7 @@ class GameController:
             return
         if self.play_form_board(target=target):
             return
+
 
     def play_form_hand(self, target):
         hand_widgets = [x for x in self.player_gui.hand_widgets]

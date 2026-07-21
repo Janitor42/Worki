@@ -12,10 +12,11 @@ root.geometry("800x800+300+200")
 root.resizable(width=False, height=False)
 root.configure(background="gray60")
 
-deck = card_factory.load_deck_from_json('data/cards_base.json')
+deck_bt = card_factory.load_deck_from_json('data/cards_base.json')
+deck_player = card_factory.load_deck_from_json('data/cards_base.json')
 
 # region bot
-bot_model = player.Player(name='Бот', full_deck=deck)
+bot_model = player.Player(name='Бот', full_deck=deck_bt)
 bot_model.begin_round()
 
 bot_gui = PlayerPanel(root=root, player_logic=bot_model)
@@ -23,7 +24,7 @@ bot_gui.place_container(x=10, y_hand=10, y_board=200)
 # endregion
 
 # region player
-player_model = player.Player(name='Олег', full_deck=deck)
+player_model = player.Player(name='Олег', full_deck=deck_player)
 player_model.begin_round()
 
 player_gui = PlayerPanel(root=root, player_logic=player_model)

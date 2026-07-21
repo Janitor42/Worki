@@ -21,6 +21,9 @@ class Player:
         self.hand = []
         self.table = []
 
+    def get_my_table_cards(self):
+        return self.table
+
     def take_damage_hero(self, damage):
         self._hp -= damage
 
@@ -57,11 +60,11 @@ class Player:
         name = card_logic.get_attr('_name')
         if self._energy >= price:
             self.set_energy(energy=price)
-            self.remove_and_take_from_table(target=name)
+            self.remove_and_send_on_table(target=name)
             return True
         return False
 
-    def remove_and_take_from_table(self, target):
+    def remove_and_send_on_table(self, target):
         for index, obj in enumerate(self.hand):
             name = obj.get_attr('_name')
             if target == name and Player.get_creature(obj):
@@ -87,3 +90,20 @@ class Player:
         enemy_hit = enemy_creature.calculate_damage(enemy_element=my_creature.get_attr('_element'))
         my_creature.take_damage(damage=enemy_hit)
         my_creature.disabled_attack()
+
+        print('произошла атака')
+
+    # def find_dead_cards(self):
+    #     on_destroy = []
+    #     for card in self.table:
+    #         if int(card.get_attr('_hp')) < 1:
+    #             on_destroy.append(card)
+    #     return on_destroy
+
+    def destroy_my_dead_cards(self):
+        dead_card=None
+        for card in self.table:
+            if int(card.get_attr('_hp')) < 1:
+                dead_card = card
+        if dead_card:
+            self.table.remove(dead_card)

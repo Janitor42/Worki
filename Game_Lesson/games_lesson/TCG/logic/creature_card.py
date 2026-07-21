@@ -32,3 +32,4 @@ class CreatureCard(Card):
 
     def disabled_attack(self):
         self._has_attacked = False
+
