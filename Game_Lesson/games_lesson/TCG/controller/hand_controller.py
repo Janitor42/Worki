@@ -11,7 +11,6 @@ class HandController:
 
 
     def update_visual(self):
-        self._model.destroy_my_dead_cards()
         self.gui.update_visual()
         self.gui.clear_widgets('hand_widgets')
         self.gui.clear_widgets('board_widgets')

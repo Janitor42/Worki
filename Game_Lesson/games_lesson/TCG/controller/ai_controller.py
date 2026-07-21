@@ -58,5 +58,5 @@ class AIController:
         else:  # атакуем его существ если они есть
             enemy_target = self.ai_choice_attack_creature_to_creature(enemy_cards_on_table=enemy_cards_on_table)
             self.player_model.attack_creature_to_creature(
-                my_creature=target, enemy_creature=enemy_target)
+                my_creature=target, enemy_creature=enemy_target, enemy_player_model=enemy_player_model)
         return True

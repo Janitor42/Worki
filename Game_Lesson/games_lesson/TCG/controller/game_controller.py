@@ -145,7 +145,8 @@ class GameController:
         if card_widget:
             card_widget: CardWidget
             self._player_model.attack_creature_to_creature(my_creature=self.selected_creature_model,
-                                                           enemy_creature=card_widget.card_logic)
+                                                           enemy_creature=card_widget.card_logic,
+                                                           enemy_player_model=self._bot_model)
             self.bot_controller.update_visual()
             self.player_controller.update_visual()
             self.selected_creature_model = False

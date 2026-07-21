@@ -82,7 +82,7 @@ class Player:
         enemy_player_model.take_damage_hero(damage=damage)
         attacked_card_model.disabled_attack()
 
-    def attack_creature_to_creature(self, my_creature, enemy_creature):
+    def attack_creature_to_creature(self, my_creature, enemy_creature, enemy_player_model):
         my_creature: CreatureCard
         enemy_creature: CreatureCard
         my_hit = my_creature.calculate_damage(enemy_element=enemy_creature.get_attr('_element'))
@@ -91,17 +91,13 @@ class Player:
         my_creature.take_damage(damage=enemy_hit)
         my_creature.disabled_attack()
 
-        print('произошла атака')
+        enemy_player_model: Player
+        enemy_player_model.destroy_my_dead_card()
+        self.destroy_my_dead_card()
 
-    # def find_dead_cards(self):
-    #     on_destroy = []
-    #     for card in self.table:
-    #         if int(card.get_attr('_hp')) < 1:
-    #             on_destroy.append(card)
-    #     return on_destroy
 
-    def destroy_my_dead_cards(self):
-        dead_card=None
+    def destroy_my_dead_card(self):
+        dead_card = None
         for card in self.table:
             if int(card.get_attr('_hp')) < 1:
                 dead_card = card
