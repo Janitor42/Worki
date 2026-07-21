@@ -9,11 +9,11 @@ class GameField:
         self.end_turn_btn = tk.Button(self.root, text="Конец хода", font=("Arial", 12, "bold"), bg="lightgray")
         self.end_turn_btn.place(x=25, y=530, width=120, height=40)
 
-    def information_action(self, text:str):
+    def information_action(self, text: str, x=380, y=400):
         self.information_label = tk.Label(self.root, text=text,
                                           font=("Arial", 12), bg="yellow")
 
-        self.information_label.place(x=380, y=400)
+        self.information_label.place(x=x, y=y)
         self.information_label.lift()
         self.information_label.after(1000, self.information_label.destroy)
 

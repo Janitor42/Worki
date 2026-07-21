@@ -67,6 +67,12 @@ class GameController:
             return
         card_from_hand = self.ai_boot.play_card_from_hand()
         card_from_table = self.ai_boot.play_card_from_table(enemy_player_model=self._player_model)
+        #слой анимации
+        if card_from_table:
+            self.game_field.information_action('1111',100,100)
+            #todo узнавать по какому виджету щелкнул бот и какую карту выбрал для удара рисовать что отнелось
+            #todo потом эту же чушь применить к человеку
+        #слой повторения хода
         if card_from_hand:
             self.game_field.root.after(1000, self.ai_turn)
         elif card_from_table:

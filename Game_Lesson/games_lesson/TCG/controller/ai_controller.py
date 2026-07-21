@@ -4,6 +4,7 @@ from controller.hand_controller import HandController
 from logic.card import Card
 from logic.player import Player
 
+from gui.card_widget import CardWidget
 
 class AIController:
     def __init__(self, player_model: Player, player_controller: HandController):
