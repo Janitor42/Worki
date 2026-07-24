@@ -24,6 +24,7 @@ class PlayerPanel:
 
         self.hand_widgets = []
         self.board_widgets = []
+        self.hero_widgets=[self.frame_player, self.name_label, self.hp_label, self.energy_label, self.sing_label]
 
     def place_container(self, x, y_hand, y_board):
         self.frame_player.place(x=x, y=y_hand)
@@ -41,7 +42,3 @@ class PlayerPanel:
         for obj in atr:
             obj.destroy_widget()
         atr.clear()
-
-
-    def get_draw_obj(self):
-        return [self.frame_player, self.name_label, self.hp_label, self.energy_label, self.sing_label]

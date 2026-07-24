@@ -16,7 +16,6 @@ class CreatureCard(Card):
 
     def calculate_damage(self, enemy_element):
         target = config.ELEMENT_ADVANTAGES.get(self._element)
-        print(self._element)
         if target == enemy_element:
             return self._attack_power + config.ELEMENT_BONUS_DAMAGE
         return self._attack_power
@@ -33,3 +32,5 @@ class CreatureCard(Card):
     def disabled_attack(self):
         self._has_attacked = False
 
+    def get_attack_power(self):
+        return self._attack_power

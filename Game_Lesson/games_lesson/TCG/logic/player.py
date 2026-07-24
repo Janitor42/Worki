@@ -77,17 +77,15 @@ class Player:
     def attack_enemy_hero(self, attacked_card_model, enemy_player_model):
         attacked_card: CreatureCard
         enemy_player_model: Player
-
         damage = attacked_card_model.get_attr('_attack_power')
         enemy_player_model.take_damage_hero(damage=damage)
         attacked_card_model.disabled_attack()
 
-    def attack_creature_to_creature(self, my_creature, enemy_creature, enemy_player_model):
+    def attack_creature_to_creature(self, my_creature, enemy_creature, my_hit, enemy_hit, enemy_player_model):
         my_creature: CreatureCard
         enemy_creature: CreatureCard
-        my_hit = my_creature.calculate_damage(enemy_element=enemy_creature.get_attr('_element'))
+
         enemy_creature.take_damage(damage=my_hit)
-        enemy_hit = enemy_creature.calculate_damage(enemy_element=my_creature.get_attr('_element'))
         my_creature.take_damage(damage=enemy_hit)
         my_creature.disabled_attack()
 
@@ -95,6 +93,12 @@ class Player:
         enemy_player_model.destroy_my_dead_card()
         self.destroy_my_dead_card()
 
+    def calculate_damage_between_cards(self, my_creature, enemy_creature):
+        my_creature: CreatureCard
+        enemy_creature: CreatureCard
+        my_hit = my_creature.calculate_damage(enemy_element=enemy_creature.get_attr('_element'))
+        enemy_hit = enemy_creature.calculate_damage(enemy_element=my_creature.get_attr('_element'))
+        return my_hit, enemy_hit
 
     def destroy_my_dead_card(self):
         dead_card = None
